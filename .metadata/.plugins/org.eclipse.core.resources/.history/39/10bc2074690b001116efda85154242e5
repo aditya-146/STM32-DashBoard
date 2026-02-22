@@ -1,0 +1,20 @@
+#include "GY_521.h"
+
+ HAL_StatusTypeDef GY521_Connection(){
+	 HAL_StatusTypeDef ret = HAL_I2C_IsDeviceReady(&hi2c1, (0x68 << 1) + 0, 1, 100);
+	 return ret;
+ }
+
+ void GY521_Config(){
+	 //Config gyros range
+	 uint8_t temp_data = 0b00001000;
+	 ret = HAL_I2C_Mem_Write(&hi2c1, (0x68 << 1) + 0, 27, 1, &temp_data, 1, 100);
+
+	 //Config acc range
+	 temp_data = 0b00000000;
+	 ret = HAL_I2C_Mem_Write(&hi2c1, (0x68 << 1) + 0, 28, 1, &temp_data, 1, 100);
+
+	 //Remove device from sleep mode and config temp sensor
+	 temp_data = 0;
+	 ret = HAL_I2C_Mem_Write(&hi2c1, (0x68 << 1) + 0, 107, 1, &temp_data, 1, 100);
+ }

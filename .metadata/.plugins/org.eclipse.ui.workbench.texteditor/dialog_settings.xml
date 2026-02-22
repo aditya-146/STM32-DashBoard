@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<item key="hasShownOverlayPopupBefore" value="true"/>
+	<item key="replaceBarOpen" value="true"/>
+	<list key="searchhistory">
+		<item value="print"/>
+		<item value="#define xTaskHandle TaskHandle"/>
+		<item value="EchoQueue"/>
+		<item value="SpeedQueue"/>
+		<item value="WaterLevelQueue"/>
+		<item value="GyroQueue"/>
+		<item value="UltrasonicQueue"/>
+		<item value="63"/>
+		<item value="107"/>
+		<item value="28"/>
+		<item value="27"/>
+		<item value="0x68"/>
+		<item value="tilt_offset"/>
+		<item value="relative_tilt"/>
+		<item value="tilt_deg"/>
+	</list>
+	<list key="replacehistory">
+		<item value="Gyro_ZData_Mem_Address"/>
+		<item value="Sleep_Temp_Mem_Address"/>
+		<item value="Acc_Range_Mem_Address"/>
+		<item value="Gyro_Range_Mem_Address"/>
+		<item value="Dev_Address"/>
+		<item value="Tilt_Offset"/>
+		<item value="Relative_Tilt"/>
+		<item value="Tilt_Deg"/>
+		<item value="Az_G"/>
+		<item value="Z_Raw"/>
+	</list>
+</section>

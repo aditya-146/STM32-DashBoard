@@ -1,0 +1,39 @@
+2026-02-19 10:27:15,017 [INFO] WebApp:194 - Connection lost
+2026-02-19 10:27:18,968 [INFO] WebApp:191 - Connection restablished
+2026-02-19 10:27:23,505 [INFO] WebApp:194 - Connection lost
+2026-02-19 10:27:23,692 [INFO] WebApp:191 - Connection restablished
+2026-02-19 10:29:37,013 [INFO] WebApp:194 - Connection lost
+2026-02-19 10:29:37,256 [INFO] WebApp:191 - Connection restablished
+2026-02-19 10:29:44,514 [INFO] WebApp:194 - Connection lost
+2026-02-19 10:29:44,721 [INFO] WebApp:191 - Connection restablished
+2026-02-19 10:29:49,018 [INFO] WebApp:194 - Connection lost
+2026-02-19 10:33:18,747 [INFO] WebApp:191 - Connection restablished
+2026-02-19 10:33:28,506 [INFO] WebApp:194 - Connection lost
+2026-02-19 10:33:33,131 [INFO] WebApp:191 - Connection restablished
+2026-02-19 10:33:37,507 [INFO] WebApp:194 - Connection lost
+2026-02-19 10:33:37,702 [INFO] WebApp:191 - Connection restablished
+2026-02-19 10:33:42,005 [INFO] WebApp:194 - Connection lost
+2026-02-19 10:33:43,278 [INFO] WebApp:191 - Connection restablished
+2026-02-19 10:33:48,014 [INFO] WebApp:194 - Connection lost
+2026-02-19 10:33:48,211 [INFO] WebApp:191 - Connection restablished
+2026-02-19 10:33:52,516 [INFO] WebApp:194 - Connection lost
+2026-02-19 10:33:52,640 [INFO] WebApp:191 - Connection restablished
+2026-02-19 10:33:59,009 [INFO] WebApp:194 - Connection lost
+2026-02-19 10:33:59,203 [INFO] WebApp:191 - Connection restablished
+2026-02-19 10:34:03,515 [INFO] WebApp:194 - Connection lost
+2026-02-19 10:34:03,717 [INFO] WebApp:191 - Connection restablished
+2026-02-19 10:34:08,019 [INFO] WebApp:194 - Connection lost
+2026-02-19 10:34:08,204 [INFO] WebApp:191 - Connection restablished
+2026-02-19 10:34:16,020 [INFO] WebApp:194 - Connection lost
+2026-02-19 10:34:20,246 [INFO] WebApp:191 - Connection restablished
+2026-02-19 10:34:25,006 [INFO] WebApp:194 - Connection lost
+2026-02-19 10:34:25,213 [INFO] WebApp:191 - Connection restablished
+2026-02-19 10:34:32,507 [INFO] WebApp:194 - Connection lost
+2026-02-19 10:35:35,674 [INFO] WebApp:191 - Connection restablished
+2026-02-19 19:31:37,144 [INFO] WebApp:194 - Connection lost
+2026-02-19 19:31:37,323 [INFO] WebApp:191 - Connection restablished
+2026-02-19 19:32:37,921 [INFO] WebAppUi:305 - Path where cad_preferences.json is located C:\Users\adity/.stm32cubeide/
+2026-02-19 19:32:37,925 [INFO] WebAppUi:306 - Updating consent from JSON file
+2026-02-19 19:32:40,093 [INFO] WebApp:403 - JxBrowser engine has been closed 
+2026-02-19 19:32:40,095 [INFO] WebAppUi:504 - JxBrowser engine has been closed 
+2026-02-19 19:32:40,097 [INFO] WebAppUi:541 - Close the Jxbrowser engine manually

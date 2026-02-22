@@ -1,0 +1,10 @@
+#include "GY_521.h"
+
+ HAL_StatusTypeDef GY521_Connection(){
+	 HAL_StatusTypeDef ret = HAL_I2C_IsDeviceReady(&hi2c1, (0x68 << 1) + 0, 1, 100);
+	 return ret;
+ }
+
+ void GY521_Config(){
+
+ }

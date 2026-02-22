@@ -1,0 +1,25 @@
+#ifndef INC_GY_521_H_
+#define INC_GY_521_H_
+
+#include "main.h"
+
+#define PI 3.14159265358979323846f
+
+#define Dev_Address 0x68
+#define Gyro_Range_Mem_Address 27
+#define Acc_Range_Mem_Address  28
+#define Sleep_Temp_Mem_Address 107
+#define Gyro_ZData_Mem_Address  63
+
+
+#define Gyro_Range 0b00001000;
+#define Acc_Range  0b00000000;
+
+ HAL_StatusTypeDef GY521_Connection();
+ void GY521_Config();
+ void GY521_Calculate_Offset(*Tilt_Offset);
+ void GY521_Calculate_Tilt(*Tilt, Tilt_Offset);
+
+
+
+#endif /* INC_GY_521_H_ */

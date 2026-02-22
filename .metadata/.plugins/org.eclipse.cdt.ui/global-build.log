@@ -1,0 +1,161 @@
+22:05:03 **** Incremental Build of configuration Debug for project GatewayECU-FreeRtos ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'HAL_CAN_RxFifo0MsgPendingCallback':
+../Core/Src/main.c:212:9: warning: implicit declaration of function 'memcpy' [-Wimplicit-function-declaration]
+  212 |         memcpy(&dht_data.temperature, &RxData[0], 4);
+      |         ^~~~~~
+../Core/Src/main.c:29:1: note: include '<string.h>' or provide a declaration of 'memcpy'
+   28 | #include <stdio.h>
+  +++ |+#include <string.h>
+   29 | /* USER CODE END Includes */
+../Core/Src/main.c:212:9: warning: incompatible implicit declaration of built-in function 'memcpy' [-Wbuiltin-declaration-mismatch]
+  212 |         memcpy(&dht_data.temperature, &RxData[0], 4);
+      |         ^~~~~~
+../Core/Src/main.c:212:9: note: include '<string.h>' or provide a declaration of 'memcpy'
+arm-none-eabi-gcc -o "GatewayECU-FreeRtos.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\adity\STM32CubeIDE\workspace_1.19.0\DashBoard\GatewayECU-FreeRtos\STM32F446RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="GatewayECU-FreeRtos.map" -Wl,--gc-sections -static -u _printf_float --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: GatewayECU-FreeRtos.elf
+ 
+arm-none-eabi-size  GatewayECU-FreeRtos.elf 
+arm-none-eabi-objdump -h -S GatewayECU-FreeRtos.elf  > "GatewayECU-FreeRtos.list"
+   text	   data	    bss	    dec	    hex	filename
+  52944	    472	  21200	  74616	  12378	GatewayECU-FreeRtos.elf
+Finished building: default.size.stdout
+ 
+Finished building: GatewayECU-FreeRtos.list
+ 
+22:12:11 **** Incremental Build of configuration Debug for project GatewayECU-FreeRtos ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'HAL_CAN_RxFifo0MsgPendingCallback':
+../Core/Src/main.c:212:9: warning: implicit declaration of function 'memcpy' [-Wimplicit-function-declaration]
+  212 |         memcpy(&dht_data.temperature, &RxData[0], 4);
+      |         ^~~~~~
+../Core/Src/main.c:29:1: note: include '<string.h>' or provide a declaration of 'memcpy'
+   28 | #include <stdio.h>
+  +++ |+#include <string.h>
+   29 | /* USER CODE END Includes */
+../Core/Src/main.c:212:9: warning: incompatible implicit declaration of built-in function 'memcpy' [-Wbuiltin-declaration-mismatch]
+  212 |         memcpy(&dht_data.temperature, &RxData[0], 4);
+      |         ^~~~~~
+../Core/Src/main.c:212:9: note: include '<string.h>' or provide a declaration of 'memcpy'
+arm-none-eabi-gcc -o "GatewayECU-FreeRtos.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\adity\STM32CubeIDE\workspace_1.19.0\DashBoard\GatewayECU-FreeRtos\STM32F446RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="GatewayECU-FreeRtos.map" -Wl,--gc-sections -static -u _printf_float --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: GatewayECU-FreeRtos.elf
+ 
+arm-none-eabi-size  GatewayECU-FreeRtos.elf 
+arm-none-eabi-objdump -h -S GatewayECU-FreeRtos.elf  > "GatewayECU-FreeRtos.list"
+   text	   data	    bss	    dec	    hex	filename
+  53240	    472	  21200	  74912	  124a0	GatewayECU-FreeRtos.elf
+Finished building: default.size.stdout
+ 
+Finished building: GatewayECU-FreeRtos.list
+ 
+22:12:28 **** Incremental Build of configuration Debug for project PWECU-FreeRtos ****
+make -j8 all 
+arm-none-eabi-size  PWECU-FreeRtos.elf 
+   text	   data	    bss	    dec	    hex	filename
+  41928	    472	  15656	  58056	   e2c8	PWECU-FreeRtos.elf
+Finished building: default.size.stdout
+ 
+22:13:22 **** Incremental Build of configuration Debug for project GatewayECU-FreeRtos ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'HAL_CAN_RxFifo0MsgPendingCallback':
+../Core/Src/main.c:211:9: warning: implicit declaration of function 'memcpy' [-Wimplicit-function-declaration]
+  211 |         memcpy(&dht_data.temperature, &RxData[0], 4);
+      |         ^~~~~~
+../Core/Src/main.c:29:1: note: include '<string.h>' or provide a declaration of 'memcpy'
+   28 | #include <stdio.h>
+  +++ |+#include <string.h>
+   29 | /* USER CODE END Includes */
+../Core/Src/main.c:211:9: warning: incompatible implicit declaration of built-in function 'memcpy' [-Wbuiltin-declaration-mismatch]
+  211 |         memcpy(&dht_data.temperature, &RxData[0], 4);
+      |         ^~~~~~
+../Core/Src/main.c:211:9: note: include '<string.h>' or provide a declaration of 'memcpy'
+arm-none-eabi-gcc -o "GatewayECU-FreeRtos.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\adity\STM32CubeIDE\workspace_1.19.0\DashBoard\GatewayECU-FreeRtos\STM32F446RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="GatewayECU-FreeRtos.map" -Wl,--gc-sections -static -u _printf_float --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: GatewayECU-FreeRtos.elf
+ 
+arm-none-eabi-size  GatewayECU-FreeRtos.elf 
+arm-none-eabi-objdump -h -S GatewayECU-FreeRtos.elf  > "GatewayECU-FreeRtos.list"
+   text	   data	    bss	    dec	    hex	filename
+  53032	    472	  21200	  74704	  123d0	GatewayECU-FreeRtos.elf
+Finished building: default.size.stdout
+ 
+Finished building: GatewayECU-FreeRtos.list
+ 
+15:14:48 **** Incremental Build of configuration Debug for project PWECU-FreeRtos ****
+make -j8 all 
+arm-none-eabi-size  PWECU-FreeRtos.elf 
+   text	   data	    bss	    dec	    hex	filename
+  41928	    472	  15656	  58056	   e2c8	PWECU-FreeRtos.elf
+Finished building: default.size.stdout
+ 
+15:15:08 **** Incremental Build of configuration Debug for project GatewayECU-FreeRtos ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'HAL_CAN_RxFifo0MsgPendingCallback':
+../Core/Src/main.c:211:9: warning: implicit declaration of function 'memcpy' [-Wimplicit-function-declaration]
+  211 |         memcpy(&dht_data.temperature, &RxData[0], 4);
+      |         ^~~~~~
+../Core/Src/main.c:29:1: note: include '<string.h>' or provide a declaration of 'memcpy'
+   28 | #include <stdio.h>
+  +++ |+#include <string.h>
+   29 | /* USER CODE END Includes */
+../Core/Src/main.c:211:9: warning: incompatible implicit declaration of built-in function 'memcpy' [-Wbuiltin-declaration-mismatch]
+  211 |         memcpy(&dht_data.temperature, &RxData[0], 4);
+      |         ^~~~~~
+../Core/Src/main.c:211:9: note: include '<string.h>' or provide a declaration of 'memcpy'
+../Core/Src/main.c: In function 'UARTTask':
+../Core/Src/main.c:777:5: warning: incompatible implicit declaration of built-in function 'memcpy' [-Wbuiltin-declaration-mismatch]
+  777 |     memcpy(&uart_frame[2], &Dht11_Data.temperature, 4);
+      |     ^~~~~~
+../Core/Src/main.c:777:5: note: include '<string.h>' or provide a declaration of 'memcpy'
+arm-none-eabi-gcc -o "GatewayECU-FreeRtos.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\adity\STM32CubeIDE\workspace_1.19.0\DashBoard\GatewayECU-FreeRtos\STM32F446RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="GatewayECU-FreeRtos.map" -Wl,--gc-sections -static -u _printf_float --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: GatewayECU-FreeRtos.elf
+ 
+arm-none-eabi-size  GatewayECU-FreeRtos.elf 
+arm-none-eabi-objdump -h -S GatewayECU-FreeRtos.elf  > "GatewayECU-FreeRtos.list"
+   text	   data	    bss	    dec	    hex	filename
+  53604	    472	  21200	  75276	  1260c	GatewayECU-FreeRtos.elf
+Finished building: default.size.stdout
+ 
+Finished building: GatewayECU-FreeRtos.list
+ 
+15:16:47 **** Incremental Build of configuration Debug for project GatewayECU-FreeRtos ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'HAL_CAN_RxFifo0MsgPendingCallback':
+../Core/Src/main.c:211:9: warning: implicit declaration of function 'memcpy' [-Wimplicit-function-declaration]
+  211 |         memcpy(&dht_data.temperature, &RxData[0], 4);
+      |         ^~~~~~
+../Core/Src/main.c:29:1: note: include '<string.h>' or provide a declaration of 'memcpy'
+   28 | #include <stdio.h>
+  +++ |+#include <string.h>
+   29 | /* USER CODE END Includes */
+../Core/Src/main.c:211:9: warning: incompatible implicit declaration of built-in function 'memcpy' [-Wbuiltin-declaration-mismatch]
+  211 |         memcpy(&dht_data.temperature, &RxData[0], 4);
+      |         ^~~~~~
+../Core/Src/main.c:211:9: note: include '<string.h>' or provide a declaration of 'memcpy'
+../Core/Src/main.c: In function 'UARTTask':
+../Core/Src/main.c:777:5: warning: incompatible implicit declaration of built-in function 'memcpy' [-Wbuiltin-declaration-mismatch]
+  777 |     memcpy(&uart_frame[2], &Dht11_Data.temperature, 4);
+      |     ^~~~~~
+../Core/Src/main.c:777:5: note: include '<string.h>' or provide a declaration of 'memcpy'
+arm-none-eabi-gcc -o "GatewayECU-FreeRtos.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\adity\STM32CubeIDE\workspace_1.19.0\DashBoard\GatewayECU-FreeRtos\STM32F446RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="GatewayECU-FreeRtos.map" -Wl,--gc-sections -static -u _printf_float --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: GatewayECU-FreeRtos.elf
+ 
+arm-none-eabi-size  GatewayECU-FreeRtos.elf 
+arm-none-eabi-objdump -h -S GatewayECU-FreeRtos.elf  > "GatewayECU-FreeRtos.list"
+   text	   data	    bss	    dec	    hex	filename
+  53816	    472	  21200	  75488	  126e0	GatewayECU-FreeRtos.elf
+Finished building: default.size.stdout
+ 
+Finished building: GatewayECU-FreeRtos.list
+ 
+15:17:04 **** Incremental Build of configuration Debug for project PWECU-FreeRtos ****
+make -j8 all 
+arm-none-eabi-size  PWECU-FreeRtos.elf 
+   text	   data	    bss	    dec	    hex	filename
+  41928	    472	  15656	  58056	   e2c8	PWECU-FreeRtos.elf
+Finished building: default.size.stdout
+ 

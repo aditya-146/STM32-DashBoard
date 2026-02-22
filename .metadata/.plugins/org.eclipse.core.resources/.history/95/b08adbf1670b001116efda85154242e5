@@ -1,0 +1,12 @@
+#ifndef INC_GY_521_H_
+#define INC_GY_521_H_
+
+#include "main.h"
+
+#define PI 3.14159265358979323846f
+
+ HAL_StatusTypeDef GY521_Connection();
+ void GY521_Config();
+
+
+#endif /* INC_GY_521_H_ */

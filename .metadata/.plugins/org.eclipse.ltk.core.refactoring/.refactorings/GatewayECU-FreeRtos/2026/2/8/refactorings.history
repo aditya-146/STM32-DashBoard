@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;GatewayECU-FreeRtos/Core/Src/GY_521.C&apos; to &apos;GY_521.c&apos;" description="Rename resource &apos;GY_521.C&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="Core/Src/GY_521.C" name="GY_521.c" stamp="1771270124172" updateReferences="true"/>
+</session>

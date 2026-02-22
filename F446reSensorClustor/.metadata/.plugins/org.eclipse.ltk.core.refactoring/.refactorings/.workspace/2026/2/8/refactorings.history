@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Delete resource &apos;GatewayECU-FreeRtos&apos;" deleteContents="false" description="Delete resource &apos;GatewayECU-FreeRtos&apos;" element1="/GatewayECU-FreeRtos" flags="7" id="org.eclipse.ltk.core.refactoring.delete.resources" resources="1" stamp="1771114616918"/>
+</session>

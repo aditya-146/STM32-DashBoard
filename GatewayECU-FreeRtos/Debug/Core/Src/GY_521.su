@@ -1,0 +1,4 @@
+../Core/Src/GY_521.c:10:20:GY521_Connection	24	static
+../Core/Src/GY_521.c:15:7:GY521_Config	32	static
+../Core/Src/GY_521.c:26:8:GY521_Calculate_Offset	32	static
+../Core/Src/GY_521.c:39:8:GY521_Calculate_Tilt	32	static

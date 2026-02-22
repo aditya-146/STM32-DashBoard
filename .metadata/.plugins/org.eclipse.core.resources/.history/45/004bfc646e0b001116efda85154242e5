@@ -1,0 +1,56 @@
+#include "GY_521.h"
+
+uint8_t Z_Data[2];
+int16_t Z_Raw;
+float Az_G;
+float Tilt_Deg;
+float Relative_Tilt;
+float Tilt_Offset;
+
+ HAL_StatusTypeDef GY521_Connection(I2C_HandleTypeDef *hi2c1){
+	 HAL_StatusTypeDef ret = HAL_I2C_IsDeviceReady(hi2c1, (Dev_Address << 1) + 0, 1, 100);
+	 return ret;
+ }
+
+ void GY521_Config(I2C_HandleTypeDef *hi2c1){
+	 //Config gyros range=
+	 HAL_I2C_Mem_Write(hi2c1, (Dev_Address << 1) + 0, Gyro_Range_Mem_Address, 1, &Gyro_Range, 1, 100);
+
+	 //Config acc range
+	 HAL_I2C_Mem_Write(hi2c1, (Dev_Address << 1) + 0, Acc_Range_Mem_Address, 1, &Acc_Range, 1, 100);
+
+	 //Remove device from sleep mode and config temp sensor
+	 HAL_I2C_Mem_Write(hi2c1, (Dev_Address << 1) + 0, Sleep_Temp_Mem_Address, 1, &Sleep_Config, 1, 100);
+ }
+
+ float GY521_Calculate_Offset(I2C_HandleTypeDef *hi2c1){
+	 HAL_I2C_Mem_Read(hi2c1, (Dev_Address << 1), Gyro_ZData_Mem_Address, 1, Z_Data, 2, 100);
+	 Z_Raw = ((int16_t)Z_Data[0] << 8) | Z_Data[1];
+	 Az_G = Z_Raw / 16384.0f;
+
+	 // Clamp just in case
+	 if (Az_G >  1.0f) Az_G =  1.0f;
+	 if (Az_G < -1.0f) Az_G = -1.0f;
+
+	 Tilt_Offset = acosf(Az_G) * (180.0f / PI);
+	 return Tilt_Offset;
+ }
+
+ float GY521_Calculate_Tilt(float Tilt_Offset, I2C_HandleTypeDef *hi2c1){
+	 HAL_I2C_Mem_Read(hi2c1, (Dev_Address << 1) + 1, Gyro_ZData_Mem_Address, 1, Z_Data, 2, 100);
+	 Z_Raw = (((int16_t)Z_Data[0] << 8) + Z_Data[1]);
+
+	 Az_G = Z_Raw / 16384.0f;
+
+	// clamp to avoid NaN
+	if (Az_G >  1.0f) Az_G =  1.0f;
+	if (Az_G < -1.0f) Az_G = -1.0f;
+
+	Tilt_Deg = acosf(Az_G) * (180.0f / PI);
+
+	// Subtract initial offset
+	Relative_Tilt = fabsf(Tilt_Deg - Tilt_Offset);
+	return Relative_Tilt;
+ }
+
+
