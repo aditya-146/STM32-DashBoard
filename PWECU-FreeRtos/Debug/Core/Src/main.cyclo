@@ -1,0 +1,11 @@
+../Core/Src/main.c:111:5:main	1
+../Core/Src/main.c:206:6:SystemClock_Config	3
+../Core/Src/main.c:246:13:MX_CAN_Init	3
+../Core/Src/main.c:300:13:MX_TIM6_Init	3
+../Core/Src/main.c:338:13:MX_USART2_UART_Init	2
+../Core/Src/main.c:373:13:MX_GPIO_Init	1
+../Core/Src/main.c:434:6:SpeedBtnsTask	1
+../Core/Src/main.c:455:6:CANTask	4
+../Core/Src/main.c:506:6:TempHumiTask	1
+../Core/Src/main.c:532:6:HAL_TIM_PeriodElapsedCallback	2
+../Core/Src/main.c:550:6:Error_Handler	1

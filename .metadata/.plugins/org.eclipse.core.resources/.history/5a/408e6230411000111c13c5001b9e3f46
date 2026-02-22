@@ -1,0 +1,51 @@
+#include "SpeedBtns.h"
+
+void SpeedCalculate(int *Speed)
+{
+    static uint8_t accel_prev = 0;
+    static uint8_t brake_prev = 0;
+
+    int accel_pressed = HAL_GPIO_ReadPin(GPIOB, GPIO_PIN_4) == GPIO_PIN_SET;
+    int brake_pressed = HAL_GPIO_ReadPin(GPIOB, GPIO_PIN_5) == GPIO_PIN_SET;
+
+    /* =========================
+       SAFETY FIRST — Brake Priority
+    ========================= */
+
+    if(brake_pressed)
+    {
+        if(*Speed > 0)
+        {
+            if(*Speed < BRAKE_THRESHOLD)
+                *Speed = 0;
+            else
+                *Speed -= BRAKE_STEP;
+        }
+    }
+
+    /* =========================
+       Acceleration (Edge Triggered)
+    ========================= */
+
+    else if(accel_pressed && !accel_prev)
+    {
+        if(*Speed < MAX_SPEED)
+            *Speed += ACCEL_STEP;
+
+        if(*Speed > MAX_SPEED)
+            *Speed = MAX_SPEED;
+    }
+
+    /* =========================
+       Natural Decay
+    ========================= */
+
+    else if(*Speed > 0)
+    {
+        *Speed -= NATURAL_DECAY;
+    }
+
+    /* Store previous state (Debounce help) */
+    accel_prev = accel_pressed;
+    brake_prev = brake_pressed;
+}

@@ -1,0 +1,15 @@
+#ifndef INC_CMN_H_
+#define INC_CMN_H_
+#include "main.h"
+
+void delay(uint16_t time, TIM_HandleTypeDef *htim);
+
+int _write(int file, char *ptr, int len);
+
+/* =========================
+   GPIO Direction Control
+========================= */
+
+void Cmn_SetPinOutput(GPIO_TypeDef *GPIOx, uint16_t GPIO_Pin);
+void Cmn_SetPinInput(GPIO_TypeDef *GPIOx, uint16_t GPIO_Pin);
+#endif /* INC_CMN_H_ */

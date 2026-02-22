@@ -1,0 +1,32 @@
+#ifndef DHT11_H
+#define DHT11_H
+
+#include "main.h"
+
+/* =========================
+   DHT11 Configuration
+========================= */
+
+#define DHT11_PORT GPIOA
+#define DHT11_PIN  GPIO_PIN_1
+
+/* Timing constants (us) */
+#define DHT11_DELAY_18MS     18000
+#define DHT11_DELAY_20US     20
+#define DHT11_RESPONSE_WAIT1 40
+#define DHT11_RESPONSE_WAIT2 80
+
+/* Data structure (Nice professional style ⭐) */
+typedef struct
+{
+    float temperature;
+    float humidity;
+} DHT11_Data_t;
+
+/* Function Prototypes */
+void DHT11_Start(void);
+uint8_t DHT11_CheckResponse(void);
+uint8_t DHT11_Read(void);
+void DHT11_ReadData(DHT11_Data_t *data);
+
+#endif

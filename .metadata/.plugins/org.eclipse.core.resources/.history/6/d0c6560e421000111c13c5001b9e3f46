@@ -1,0 +1,45 @@
+#include "SpeedBtns.h"
+
+void SpeedCalculate(uint *Speed)
+{
+    int accel_pressed = HAL_GPIO_ReadPin(GPIOB, GPIO_PIN_4) == GPIO_PIN_SET;
+    int brake_pressed = HAL_GPIO_ReadPin(GPIOB, GPIO_PIN_5) == GPIO_PIN_SET;
+
+    /* =========================
+       Brake Priority (Safety First)
+    ========================= */
+
+    if(brake_pressed)
+    {
+        if(*Speed > 0)
+        {
+            if(*Speed < BRAKE_THRESHOLD)
+                *Speed = 0;
+            else
+                *Speed -= BRAKE_STEP;
+        }
+    }
+
+    /* =========================
+       Acceleration
+    ========================= */
+
+    else if(accel_pressed)
+    {
+        if(*Speed < MAX_SPEED)
+            *Speed += ACCEL_STEP;
+
+        if(*Speed > MAX_SPEED)
+            *Speed = MAX_SPEED;
+    }
+
+    /* =========================
+       Natural Decay
+    ========================= */
+
+    else
+    {
+        if(*Speed > 0)
+            *Speed -= NATURAL_DECAY;
+    }
+}

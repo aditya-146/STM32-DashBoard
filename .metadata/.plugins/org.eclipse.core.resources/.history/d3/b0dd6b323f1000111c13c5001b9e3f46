@@ -1,0 +1,90 @@
+#include "DHT11.h"
+#include "Cmn.h"
+
+/* =========================
+   Public Functions
+========================= */
+
+void DHT11_Start(void)
+{
+    DHT11_SetPinOutput();
+
+    HAL_GPIO_WritePin(DHT11_PORT, DHT11_PIN, GPIO_PIN_RESET);
+    DHT11_Delay(DHT11_DELAY_18MS);
+
+    HAL_GPIO_WritePin(DHT11_PORT, DHT11_PIN, GPIO_PIN_SET);
+    DHT11_Delay(DHT11_DELAY_20US);
+
+    DHT11_SetPinInput();
+}
+
+uint8_t DHT11_CheckResponse(void)
+{
+    uint8_t Response = 0;
+
+    DHT11_Delay(DHT11_RESPONSE_WAIT1);
+
+    if(!HAL_GPIO_ReadPin(DHT11_PORT, DHT11_PIN))
+    {
+        DHT11_Delay(DHT11_RESPONSE_WAIT2);
+
+        if(HAL_GPIO_ReadPin(DHT11_PORT, DHT11_PIN))
+            Response = 1;
+        else
+            Response = 0;
+    }
+
+    while(HAL_GPIO_ReadPin(DHT11_PORT, DHT11_PIN));
+
+    return Response;
+}
+
+uint8_t DHT11_Read(void)
+{
+    uint8_t i = 0;
+    uint8_t j;
+    uint8_t data = 0;
+
+    for(j = 0; j < 8; j++)
+    {
+        while(!HAL_GPIO_ReadPin(DHT11_PORT, DHT11_PIN));
+
+        DHT11_Delay(40);
+
+        if(HAL_GPIO_ReadPin(DHT11_PORT, DHT11_PIN))
+            data |= (1 << (7 - j));
+
+        while(HAL_GPIO_ReadPin(DHT11_PORT, DHT11_PIN));
+    }
+
+    return data;
+}
+
+/* =========================
+   High Level Read Function ⭐
+========================= */
+
+void DHT11_ReadData(DHT11_Data_t *data)
+{
+    uint8_t Rh_byte1, Rh_byte2;
+    uint8_t Temp_byte1, Temp_byte2;
+    uint8_t SUM;
+
+    uint16_t RH, TEMP;
+
+    DHT11_Start();
+
+    DHT11_CheckResponse();
+
+    Rh_byte1 = DHT11_Read();
+    Rh_byte2 = DHT11_Read();
+    Temp_byte1 = DHT11_Read();
+    Temp_byte2 = DHT11_Read();
+    SUM = DHT11_Read();
+
+    RH = Rh_byte1;
+    TEMP = Temp_byte1;
+
+    data->humidity = (float)RH;
+    data->temperature = (float)TEMP;
+}

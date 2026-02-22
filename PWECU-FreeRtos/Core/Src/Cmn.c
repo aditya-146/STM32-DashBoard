@@ -1,0 +1,49 @@
+#include "Cmn.h"
+
+/* =========================
+   Microsecond Delay
+========================= */
+
+void Cmn_DelayUs(uint16_t time_us)
+{
+    __HAL_TIM_SET_COUNTER(&htim6, 0);
+
+    while(__HAL_TIM_GET_COUNTER(&htim6) < time_us);
+}
+
+/* =========================
+   GPIO Direction Control
+========================= */
+
+void Cmn_SetPinOutput(GPIO_TypeDef *GPIOx, uint16_t GPIO_Pin)
+{
+    GPIO_InitTypeDef GPIO_InitStruct = {0};
+
+    GPIO_InitStruct.Pin = GPIO_Pin;
+    GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
+    GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
+    GPIO_InitStruct.Pull = GPIO_NOPULL;
+
+    HAL_GPIO_Init(GPIOx, &GPIO_InitStruct);
+}
+
+void Cmn_SetPinInput(GPIO_TypeDef *GPIOx, uint16_t GPIO_Pin)
+{
+    GPIO_InitTypeDef GPIO_InitStruct = {0};
+
+    GPIO_InitStruct.Pin = GPIO_Pin;
+    GPIO_InitStruct.Mode = GPIO_MODE_INPUT;
+    GPIO_InitStruct.Pull = GPIO_NOPULL;
+
+    HAL_GPIO_Init(GPIOx, &GPIO_InitStruct);
+}
+
+int _write(int file, char *ptr, int len)
+{
+    for(int DataIdx = 0; DataIdx < len; DataIdx++)
+    {
+        ITM_SendChar(*ptr++);
+    }
+    return len;
+}
+
