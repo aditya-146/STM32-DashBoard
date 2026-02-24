@@ -1,10 +1,10 @@
-18:22:23 **** Incremental Build of configuration Debug for project GatewayECU-FreeRtos ****
+22:58:39 **** Incremental Build of configuration Debug for project GatewayECU-FreeRtos ****
 make -j8 all 
 arm-none-eabi-size  GatewayECU-FreeRtos.elf 
    text	   data	    bss	    dec	    hex	filename
-  53816	    472	  21200	  75488	  126e0	GatewayECU-FreeRtos.elf
+  54072	    472	  21272	  75816	  12828	GatewayECU-FreeRtos.elf
 Finished building: default.size.stdout
  
 
-18:22:23 Build Finished. 0 errors, 0 warnings. (took 441ms)
+22:58:40 Build Finished. 0 errors, 0 warnings. (took 440ms)
 

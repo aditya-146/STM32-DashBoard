@@ -53,6 +53,7 @@ I2C_HandleTypeDef hi2c1;
 TIM_HandleTypeDef htim2;
 
 UART_HandleTypeDef huart2;
+UART_HandleTypeDef huart3;
 
 /* Definitions for UltrasonicSenso */
 osThreadId_t UltrasonicSensoHandle;
@@ -79,14 +80,14 @@ const osThreadAttr_t GyroHandle_attributes = {
 osThreadId_t UARTHandleHandle;
 const osThreadAttr_t UARTHandle_attributes = {
   .name = "UARTHandle",
-  .stack_size = 256 * 4,
+  .stack_size = 512 * 4,
   .priority = (osPriority_t) osPriorityHigh1,
 };
 ///* Definitions for CANHandle */
 //osThreadId_t CANHandleHandle;
 //const osThreadAttr_t CANHandle_attributes = {
 //  .name = "CANHandle",
-//  .stack_size = 256 * 4,
+//  .stack_size = 128 * 4,
 //  .priority = (osPriority_t) osPriorityHigh,
 //};
 /* Definitions for UltrasonicQueue */
@@ -143,6 +144,7 @@ static void MX_I2C1_Init(void);
 static void MX_TIM2_Init(void);
 static void MX_ADC1_Init(void);
 static void MX_CAN1_Init(void);
+static void MX_USART3_UART_Init(void);
 void UltrasonicSensorTask(void *argument);
 void WaterLevelTask(void *argument);
 void GyroTask(void *argument);
@@ -252,6 +254,7 @@ int main(void)
   MX_TIM2_Init();
   MX_ADC1_Init();
   MX_CAN1_Init();
+  MX_USART3_UART_Init();
   /* USER CODE BEGIN 2 */
   HAL_TIM_IC_Start(&htim2, TIM_CHANNEL_1);
   HAL_CAN_Start(&hcan1);
@@ -314,7 +317,7 @@ int main(void)
   UARTHandleHandle = osThreadNew(UARTTask, NULL, &UARTHandle_attributes);
 
   /* creation of CANHandle */
-  //CANHandleHandle = osThreadNew(CANTask, NULL, &CANHandle_attributes);
+ // CANHandleHandle = osThreadNew(CANTask, NULL, &CANHandle_attributes);
 
   /* USER CODE BEGIN RTOS_THREADS */
   /* add threads, ... */
@@ -617,6 +620,39 @@ static void MX_USART2_UART_Init(void)
 }
 
 /**
+  * @brief USART3 Initialization Function
+  * @param None
+  * @retval None
+  */
+static void MX_USART3_UART_Init(void)
+{
+
+  /* USER CODE BEGIN USART3_Init 0 */
+
+  /* USER CODE END USART3_Init 0 */
+
+  /* USER CODE BEGIN USART3_Init 1 */
+
+  /* USER CODE END USART3_Init 1 */
+  huart3.Instance = USART3;
+  huart3.Init.BaudRate = 115200;
+  huart3.Init.WordLength = UART_WORDLENGTH_8B;
+  huart3.Init.StopBits = UART_STOPBITS_1;
+  huart3.Init.Parity = UART_PARITY_NONE;
+  huart3.Init.Mode = UART_MODE_TX_RX;
+  huart3.Init.HwFlowCtl = UART_HWCONTROL_NONE;
+  huart3.Init.OverSampling = UART_OVERSAMPLING_16;
+  if (HAL_UART_Init(&huart3) != HAL_OK)
+  {
+    Error_Handler();
+  }
+  /* USER CODE BEGIN USART3_Init 2 */
+
+  /* USER CODE END USART3_Init 2 */
+
+}
+
+/**
   * @brief GPIO Initialization Function
   * @param None
   * @retval None
@@ -792,7 +828,7 @@ void UARTTask(void *argument)
     uart_frame[20] = 0x55;  // End byte
 
     // Send frame via UART
-    HAL_UART_Transmit(&huart2, uart_frame, 21, HAL_MAX_DELAY);
+    HAL_UART_Transmit(&huart3, uart_frame, 21, HAL_MAX_DELAY);
 
     // Print all sensor data
        printf("Speed: %u km/h | Temp: %.1f C | Humi: %.1f %% | Tilt: %.1f deg | Dist: %u cm | Water: %lu\n",
@@ -801,6 +837,8 @@ void UARTTask(void *argument)
     osDelay(100);
   }
 }
+
+
 /* USER CODE BEGIN Header_CANTask */
 /**
 * @brief Function implementing the CANHandle thread.
@@ -811,11 +849,11 @@ void UARTTask(void *argument)
 //void CANTask(void *argument)
 //{
 //  /* USER CODE BEGIN CANTask */
-//  /* Infinite loop */
-//  for(;;)
-//  {
-//    osDelay(1);
-//  }
+////  /* Infinite loop */
+////  for(;;)
+////  {
+////    osDelay(1);
+////  }
 //  /* USER CODE END CANTask */
 //}
 

@@ -1,587 +1,130 @@
-17:42:04 **** Incremental Build of configuration Debug for project PWECU-FreeRtos ****
+00:06:34 **** Incremental Build of configuration Debug for project GatewayECU-FreeRtos ****
 make -j8 all 
-arm-none-eabi-gcc "../Core/Src/DHT11.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F302x8 -c -I../Core/Inc -I../Drivers/STM32F3xx_HAL_Driver/Inc -I../Drivers/STM32F3xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F3xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/DHT11.d" -MT"Core/Src/DHT11.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/DHT11.o"
-../Core/Src/DHT11.c: In function 'DHT11_ReadData':
-../Core/Src/DHT11.c:77:13: warning: variable 'SUM' set but not used [-Wunused-but-set-variable]
-   77 |     uint8_t SUM;
-      |             ^~~
-../Core/Src/DHT11.c:76:25: warning: variable 'Temp_byte2' set but not used [-Wunused-but-set-variable]
-   76 |     uint8_t Temp_byte1, Temp_byte2;
-      |                         ^~~~~~~~~~
-../Core/Src/DHT11.c:75:23: warning: variable 'Rh_byte2' set but not used [-Wunused-but-set-variable]
-   75 |     uint8_t Rh_byte1, Rh_byte2;
-      |                       ^~~~~~~~
-arm-none-eabi-gcc -o "PWECU-FreeRtos.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\adity\STM32CubeIDE\workspace_1.19.0\DashBoard\PWECU-FreeRtos\STM32F302R8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="PWECU-FreeRtos.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: PWECU-FreeRtos.elf
- 
-arm-none-eabi-size  PWECU-FreeRtos.elf 
-arm-none-eabi-objdump -h -S PWECU-FreeRtos.elf  > "PWECU-FreeRtos.list"
-   text	   data	    bss	    dec	    hex	filename
-  27504	     16	  10320	  37840	   93d0	PWECU-FreeRtos.elf
-Finished building: default.size.stdout
- 
-Finished building: PWECU-FreeRtos.list
- 
-17:43:33 **** Incremental Build of configuration Debug for project PWECU-FreeRtos ****
-make -j8 all 
-arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F302x8 -c -I../Core/Inc -I../Drivers/STM32F3xx_HAL_Driver/Inc -I../Drivers/STM32F3xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F3xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
-../Core/Src/main.c: In function 'SpeedBtnsTask':
-../Core/Src/main.c:441:24: warning: passing argument 1 of 'SpeedCalculate' from incompatible pointer type [-Wincompatible-pointer-types]
-  441 |         SpeedCalculate(&Speed);
-      |                        ^~~~~~
-      |                        |
-      |                        uint8_t * {aka unsigned char *}
-In file included from ../Core/Src/main.c:25:
-../Core/Inc/SpeedBtns.h:23:26: note: expected 'int *' but argument is of type 'uint8_t *' {aka 'unsigned char *'}
-   23 | void SpeedCalculate(int *Speed);
-      |                     ~~~~~^~~~~
-../Core/Src/main.c:444:5: warning: implicit declaration of function 'printf' [-Wimplicit-function-declaration]
-  444 |     printf ("Speed: %u\r\n", Speed);
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'HAL_CAN_RxFifo0MsgPendingCallback':
+../Core/Src/main.c:214:9: warning: implicit declaration of function 'memcpy' [-Wimplicit-function-declaration]
+  214 |         memcpy(&dht_data.temperature, &RxData[0], 4);
+      |         ^~~~~~
+../Core/Src/main.c:29:1: note: include '<string.h>' or provide a declaration of 'memcpy'
+   28 | #include <stdio.h>
+  +++ |+#include <string.h>
+   29 | /* USER CODE END Includes */
+../Core/Src/main.c:214:9: warning: incompatible implicit declaration of built-in function 'memcpy' [-Wbuiltin-declaration-mismatch]
+  214 |         memcpy(&dht_data.temperature, &RxData[0], 4);
+      |         ^~~~~~
+../Core/Src/main.c:214:9: note: include '<string.h>' or provide a declaration of 'memcpy'
+../Core/Src/main.c: In function 'UARTTask':
+../Core/Src/main.c:814:5: warning: incompatible implicit declaration of built-in function 'memcpy' [-Wbuiltin-declaration-mismatch]
+  814 |     memcpy(&uart_frame[2], &Dht11_Data.temperature, 4);
       |     ^~~~~~
-../Core/Src/main.c:28:1: note: include '<stdio.h>' or provide a declaration of 'printf'
-   27 | #include "Cmn.h"
-  +++ |+#include <stdio.h>
-   28 | 
-../Core/Src/main.c:444:5: warning: incompatible implicit declaration of built-in function 'printf' [-Wbuiltin-declaration-mismatch]
-  444 |     printf ("Speed: %u\r\n", Speed);
+../Core/Src/main.c:814:5: note: include '<string.h>' or provide a declaration of 'memcpy'
+arm-none-eabi-gcc -o "GatewayECU-FreeRtos.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\adity\STM32CubeIDE\workspace_1.19.0\DashBoard\GatewayECU-FreeRtos\STM32F446RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="GatewayECU-FreeRtos.map" -Wl,--gc-sections -static -u _printf_float --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: GatewayECU-FreeRtos.elf
+ 
+arm-none-eabi-size  GatewayECU-FreeRtos.elf 
+arm-none-eabi-objdump -h -S GatewayECU-FreeRtos.elf  > "GatewayECU-FreeRtos.list"
+   text	   data	    bss	    dec	    hex	filename
+  53896	    472	  21272	  75640	  12778	GatewayECU-FreeRtos.elf
+Finished building: default.size.stdout
+ 
+Finished building: GatewayECU-FreeRtos.list
+ 
+00:06:47 **** Incremental Build of configuration Debug for project GatewayECU-FreeRtos ****
+make -j8 all 
+arm-none-eabi-size  GatewayECU-FreeRtos.elf 
+   text	   data	    bss	    dec	    hex	filename
+  53896	    472	  21272	  75640	  12778	GatewayECU-FreeRtos.elf
+Finished building: default.size.stdout
+ 
+00:07:25 **** Incremental Build of configuration Debug for project GatewayECU-FreeRtos ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'HAL_CAN_RxFifo0MsgPendingCallback':
+../Core/Src/main.c:214:9: warning: implicit declaration of function 'memcpy' [-Wimplicit-function-declaration]
+  214 |         memcpy(&dht_data.temperature, &RxData[0], 4);
+      |         ^~~~~~
+../Core/Src/main.c:29:1: note: include '<string.h>' or provide a declaration of 'memcpy'
+   28 | #include <stdio.h>
+  +++ |+#include <string.h>
+   29 | /* USER CODE END Includes */
+../Core/Src/main.c:214:9: warning: incompatible implicit declaration of built-in function 'memcpy' [-Wbuiltin-declaration-mismatch]
+  214 |         memcpy(&dht_data.temperature, &RxData[0], 4);
+      |         ^~~~~~
+../Core/Src/main.c:214:9: note: include '<string.h>' or provide a declaration of 'memcpy'
+../Core/Src/main.c: In function 'UARTTask':
+../Core/Src/main.c:814:5: warning: incompatible implicit declaration of built-in function 'memcpy' [-Wbuiltin-declaration-mismatch]
+  814 |     memcpy(&uart_frame[2], &Dht11_Data.temperature, 4);
       |     ^~~~~~
-../Core/Src/main.c:444:5: note: include '<stdio.h>' or provide a declaration of 'printf'
-../Core/Src/main.c: In function 'CANTask':
-../Core/Src/main.c:476:60: warning: passing argument 4 of 'HAL_CAN_AddTxMessage' from incompatible pointer type [-Wincompatible-pointer-types]
-  476 |         if (HAL_CAN_AddTxMessage(&hcan, &TxHeader, TxData, &TxMailbox) != HAL_OK){
-      |                                                            ^~~~~~~~~~
-      |                                                            |
-      |                                                            uint8_t * {aka unsigned char *}
-In file included from ../Core/Inc/stm32f3xx_hal_conf.h:224,
-                 from ../Drivers/STM32F3xx_HAL_Driver/Inc/stm32f3xx_hal.h:29,
-                 from ../Core/Inc/main.h:30,
-                 from ../Core/Src/main.c:20:
-../Drivers/STM32F3xx_HAL_Driver/Inc/stm32f3xx_hal_can.h:684:73: note: expected 'uint32_t *' {aka 'long unsigned int *'} but argument is of type 'uint8_t *' {aka 'unsigned char *'}
-  684 |                                        const uint8_t aData[], uint32_t *pTxMailbox);
-      |                                                               ~~~~~~~~~~^~~~~~~~~~
-../Core/Src/main.c:483:9: warning: implicit declaration of function 'memcpy' [-Wimplicit-function-declaration]
-  483 |         memcpy(&TxData[0], &dht11_data.temperature, 4);
+../Core/Src/main.c:814:5: note: include '<string.h>' or provide a declaration of 'memcpy'
+arm-none-eabi-gcc -o "GatewayECU-FreeRtos.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\adity\STM32CubeIDE\workspace_1.19.0\DashBoard\GatewayECU-FreeRtos\STM32F446RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="GatewayECU-FreeRtos.map" -Wl,--gc-sections -static -u _printf_float --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: GatewayECU-FreeRtos.elf
+ 
+arm-none-eabi-size  GatewayECU-FreeRtos.elf 
+arm-none-eabi-objdump -h -S GatewayECU-FreeRtos.elf  > "GatewayECU-FreeRtos.list"
+   text	   data	    bss	    dec	    hex	filename
+  53896	    472	  21272	  75640	  12778	GatewayECU-FreeRtos.elf
+Finished building: default.size.stdout
+ 
+Finished building: GatewayECU-FreeRtos.list
+ 
+00:13:27 **** Incremental Build of configuration Debug for project GatewayECU-FreeRtos ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc "../Core/Src/stm32f4xx_hal_msp.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F446xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/stm32f4xx_hal_msp.d" -MT"Core/Src/stm32f4xx_hal_msp.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/stm32f4xx_hal_msp.o"
+../Core/Src/main.c: In function 'HAL_CAN_RxFifo0MsgPendingCallback':
+../Core/Src/main.c:213:9: warning: implicit declaration of function 'memcpy' [-Wimplicit-function-declaration]
+  213 |         memcpy(&dht_data.temperature, &RxData[0], 4);
       |         ^~~~~~
-../Core/Src/main.c:28:1: note: include '<string.h>' or provide a declaration of 'memcpy'
-   27 | #include "Cmn.h"
+../Core/Src/main.c:29:1: note: include '<string.h>' or provide a declaration of 'memcpy'
+   28 | #include <stdio.h>
   +++ |+#include <string.h>
-   28 | 
-../Core/Src/main.c:483:9: warning: incompatible implicit declaration of built-in function 'memcpy' [-Wbuiltin-declaration-mismatch]
-  483 |         memcpy(&TxData[0], &dht11_data.temperature, 4);
+   29 | /* USER CODE END Includes */
+../Core/Src/main.c:213:9: warning: incompatible implicit declaration of built-in function 'memcpy' [-Wbuiltin-declaration-mismatch]
+  213 |         memcpy(&dht_data.temperature, &RxData[0], 4);
       |         ^~~~~~
-../Core/Src/main.c:483:9: note: include '<string.h>' or provide a declaration of 'memcpy'
-../Core/Src/main.c:486:60: warning: passing argument 4 of 'HAL_CAN_AddTxMessage' from incompatible pointer type [-Wincompatible-pointer-types]
-  486 |         if (HAL_CAN_AddTxMessage(&hcan, &TxHeader, TxData, &TxMailbox) != HAL_OK){
-      |                                                            ^~~~~~~~~~
-      |                                                            |
-      |                                                            uint8_t * {aka unsigned char *}
-../Drivers/STM32F3xx_HAL_Driver/Inc/stm32f3xx_hal_can.h:684:73: note: expected 'uint32_t *' {aka 'long unsigned int *'} but argument is of type 'uint8_t *' {aka 'unsigned char *'}
-  684 |                                        const uint8_t aData[], uint32_t *pTxMailbox);
-      |                                                               ~~~~~~~~~~^~~~~~~~~~
-arm-none-eabi-gcc -o "PWECU-FreeRtos.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\adity\STM32CubeIDE\workspace_1.19.0\DashBoard\PWECU-FreeRtos\STM32F302R8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="PWECU-FreeRtos.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: PWECU-FreeRtos.elf
- 
-arm-none-eabi-size  PWECU-FreeRtos.elf 
-arm-none-eabi-objdump -h -S PWECU-FreeRtos.elf  > "PWECU-FreeRtos.list"
-   text	   data	    bss	    dec	    hex	filename
-  31740	    108	  10652	  42500	   a604	PWECU-FreeRtos.elf
-Finished building: default.size.stdout
- 
-Finished building: PWECU-FreeRtos.list
- 
-17:45:40 **** Incremental Build of configuration Debug for project PWECU-FreeRtos ****
-make -j8 all 
-arm-none-eabi-size  PWECU-FreeRtos.elf 
-   text	   data	    bss	    dec	    hex	filename
-  31740	    108	  10652	  42500	   a604	PWECU-FreeRtos.elf
-Finished building: default.size.stdout
- 
-17:50:40 **** Incremental Build of configuration Debug for project PWECU-FreeRtos ****
-make -j8 all 
-arm-none-eabi-gcc "../Core/Src/SpeedBtns.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F302x8 -c -I../Core/Inc -I../Drivers/STM32F3xx_HAL_Driver/Inc -I../Drivers/STM32F3xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F3xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/SpeedBtns.d" -MT"Core/Src/SpeedBtns.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/SpeedBtns.o"
-../Core/Src/SpeedBtns.c: In function 'SpeedCalculate':
-../Core/Src/SpeedBtns.c:6:20: warning: variable 'brake_prev' set but not used [-Wunused-but-set-variable]
-    6 |     static uint8_t brake_prev = 0;
-      |                    ^~~~~~~~~~
-arm-none-eabi-gcc -o "PWECU-FreeRtos.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\adity\STM32CubeIDE\workspace_1.19.0\DashBoard\PWECU-FreeRtos\STM32F302R8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="PWECU-FreeRtos.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: PWECU-FreeRtos.elf
- 
-arm-none-eabi-size  PWECU-FreeRtos.elf 
-arm-none-eabi-objdump -h -S PWECU-FreeRtos.elf  > "PWECU-FreeRtos.list"
-   text	   data	    bss	    dec	    hex	filename
-  31772	    108	  10660	  42540	   a62c	PWECU-FreeRtos.elf
-Finished building: default.size.stdout
- 
-Finished building: PWECU-FreeRtos.list
- 
-17:52:43 **** Incremental Build of configuration Debug for project PWECU-FreeRtos ****
-make -j8 all 
-arm-none-eabi-gcc "../Core/Src/SpeedBtns.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F302x8 -c -I../Core/Inc -I../Drivers/STM32F3xx_HAL_Driver/Inc -I../Drivers/STM32F3xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F3xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/SpeedBtns.d" -MT"Core/Src/SpeedBtns.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/SpeedBtns.o"
-arm-none-eabi-gcc -o "PWECU-FreeRtos.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\adity\STM32CubeIDE\workspace_1.19.0\DashBoard\PWECU-FreeRtos\STM32F302R8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="PWECU-FreeRtos.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: PWECU-FreeRtos.elf
- 
-arm-none-eabi-size  PWECU-FreeRtos.elf 
-arm-none-eabi-objdump -h -S PWECU-FreeRtos.elf  > "PWECU-FreeRtos.list"
-   text	   data	    bss	    dec	    hex	filename
-  31740	    108	  10652	  42500	   a604	PWECU-FreeRtos.elf
-Finished building: default.size.stdout
- 
-Finished building: PWECU-FreeRtos.list
- 
-17:58:55 **** Incremental Build of configuration Debug for project PWECU-FreeRtos ****
-make -j8 all 
-arm-none-eabi-gcc "../Core/Src/SpeedBtns.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F302x8 -c -I../Core/Inc -I../Drivers/STM32F3xx_HAL_Driver/Inc -I../Drivers/STM32F3xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F3xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/SpeedBtns.d" -MT"Core/Src/SpeedBtns.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/SpeedBtns.o"
-arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F302x8 -c -I../Core/Inc -I../Drivers/STM32F3xx_HAL_Driver/Inc -I../Drivers/STM32F3xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F3xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
-../Core/Src/main.c: In function 'SpeedBtnsTask':
-../Core/Src/main.c:444:5: warning: implicit declaration of function 'printf' [-Wimplicit-function-declaration]
-  444 |     printf ("Speed: %u\r\n", Speed);
+../Core/Src/main.c:213:9: note: include '<string.h>' or provide a declaration of 'memcpy'
+../Core/Src/main.c: In function 'UARTTask':
+../Core/Src/main.c:813:5: warning: incompatible implicit declaration of built-in function 'memcpy' [-Wbuiltin-declaration-mismatch]
+  813 |     memcpy(&uart_frame[2], &Dht11_Data.temperature, 4);
       |     ^~~~~~
-../Core/Src/main.c:28:1: note: include '<stdio.h>' or provide a declaration of 'printf'
-   27 | #include "Cmn.h"
-  +++ |+#include <stdio.h>
-   28 | 
-../Core/Src/main.c:444:5: warning: incompatible implicit declaration of built-in function 'printf' [-Wbuiltin-declaration-mismatch]
-  444 |     printf ("Speed: %u\r\n", Speed);
-      |     ^~~~~~
-../Core/Src/main.c:444:5: note: include '<stdio.h>' or provide a declaration of 'printf'
-../Core/Src/main.c: In function 'CANTask':
-../Core/Src/main.c:476:60: warning: passing argument 4 of 'HAL_CAN_AddTxMessage' from incompatible pointer type [-Wincompatible-pointer-types]
-  476 |         if (HAL_CAN_AddTxMessage(&hcan, &TxHeader, TxData, &TxMailbox) != HAL_OK){
-      |                                                            ^~~~~~~~~~
-      |                                                            |
-      |                                                            uint8_t * {aka unsigned char *}
-In file included from ../Core/Inc/stm32f3xx_hal_conf.h:224,
-                 from ../Drivers/STM32F3xx_HAL_Driver/Inc/stm32f3xx_hal.h:29,
-                 from ../Core/Inc/main.h:30,
-                 from ../Core/Src/main.c:20:
-../Drivers/STM32F3xx_HAL_Driver/Inc/stm32f3xx_hal_can.h:684:73: note: expected 'uint32_t *' {aka 'long unsigned int *'} but argument is of type 'uint8_t *' {aka 'unsigned char *'}
-  684 |                                        const uint8_t aData[], uint32_t *pTxMailbox);
-      |                                                               ~~~~~~~~~~^~~~~~~~~~
-../Core/Src/main.c:483:9: warning: implicit declaration of function 'memcpy' [-Wimplicit-function-declaration]
-  483 |         memcpy(&TxData[0], &dht11_data.temperature, 4);
-      |         ^~~~~~
-../Core/Src/main.c:28:1: note: include '<string.h>' or provide a declaration of 'memcpy'
-   27 | #include "Cmn.h"
-  +++ |+#include <string.h>
-   28 | 
-../Core/Src/main.c:483:9: warning: incompatible implicit declaration of built-in function 'memcpy' [-Wbuiltin-declaration-mismatch]
-  483 |         memcpy(&TxData[0], &dht11_data.temperature, 4);
-      |         ^~~~~~
-../Core/Src/main.c:483:9: note: include '<string.h>' or provide a declaration of 'memcpy'
-../Core/Src/main.c:486:60: warning: passing argument 4 of 'HAL_CAN_AddTxMessage' from incompatible pointer type [-Wincompatible-pointer-types]
-  486 |         if (HAL_CAN_AddTxMessage(&hcan, &TxHeader, TxData, &TxMailbox) != HAL_OK){
-      |                                                            ^~~~~~~~~~
-      |                                                            |
-      |                                                            uint8_t * {aka unsigned char *}
-../Drivers/STM32F3xx_HAL_Driver/Inc/stm32f3xx_hal_can.h:684:73: note: expected 'uint32_t *' {aka 'long unsigned int *'} but argument is of type 'uint8_t *' {aka 'unsigned char *'}
-  684 |                                        const uint8_t aData[], uint32_t *pTxMailbox);
-      |                                                               ~~~~~~~~~~^~~~~~~~~~
-arm-none-eabi-gcc -o "PWECU-FreeRtos.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\adity\STM32CubeIDE\workspace_1.19.0\DashBoard\PWECU-FreeRtos\STM32F302R8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="PWECU-FreeRtos.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: PWECU-FreeRtos.elf
+../Core/Src/main.c:813:5: note: include '<string.h>' or provide a declaration of 'memcpy'
+arm-none-eabi-gcc -o "GatewayECU-FreeRtos.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\adity\STM32CubeIDE\workspace_1.19.0\DashBoard\GatewayECU-FreeRtos\STM32F446RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="GatewayECU-FreeRtos.map" -Wl,--gc-sections -static -u _printf_float --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: GatewayECU-FreeRtos.elf
  
-arm-none-eabi-size  PWECU-FreeRtos.elf 
-arm-none-eabi-objdump -h -S PWECU-FreeRtos.elf  > "PWECU-FreeRtos.list"
+arm-none-eabi-size  GatewayECU-FreeRtos.elf 
+arm-none-eabi-objdump -h -S GatewayECU-FreeRtos.elf  > "GatewayECU-FreeRtos.list"
    text	   data	    bss	    dec	    hex	filename
-  31740	    108	  10652	  42500	   a604	PWECU-FreeRtos.elf
+  54072	    472	  21272	  75816	  12828	GatewayECU-FreeRtos.elf
 Finished building: default.size.stdout
  
-Finished building: PWECU-FreeRtos.list
+Finished building: GatewayECU-FreeRtos.list
  
-18:01:38 **** Incremental Build of configuration Debug for project PWECU-FreeRtos ****
+00:14:45 **** Incremental Build of configuration Debug for project PWECU-FreeRtos ****
 make -j8 all 
 arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F302x8 -c -I../Core/Inc -I../Drivers/STM32F3xx_HAL_Driver/Inc -I../Drivers/STM32F3xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F3xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
 ../Core/Src/main.c: In function 'CANTask':
-../Core/Src/main.c:475:60: warning: passing argument 4 of 'HAL_CAN_AddTxMessage' from incompatible pointer type [-Wincompatible-pointer-types]
-  475 |         if (HAL_CAN_AddTxMessage(&hcan, &TxHeader, TxData, &TxMailbox) != HAL_OK){
-      |                                                            ^~~~~~~~~~
-      |                                                            |
-      |                                                            uint8_t * {aka unsigned char *}
-In file included from ../Core/Inc/stm32f3xx_hal_conf.h:224,
-                 from ../Drivers/STM32F3xx_HAL_Driver/Inc/stm32f3xx_hal.h:29,
-                 from ../Core/Inc/main.h:30,
-                 from ../Core/Src/main.c:20:
-../Drivers/STM32F3xx_HAL_Driver/Inc/stm32f3xx_hal_can.h:684:73: note: expected 'uint32_t *' {aka 'long unsigned int *'} but argument is of type 'uint8_t *' {aka 'unsigned char *'}
-  684 |                                        const uint8_t aData[], uint32_t *pTxMailbox);
-      |                                                               ~~~~~~~~~~^~~~~~~~~~
-../Core/Src/main.c:482:9: warning: implicit declaration of function 'memcpy' [-Wimplicit-function-declaration]
-  482 |         memcpy(&TxData[0], &dht11_data.temperature, 4);
-      |         ^~~~~~
-../Core/Src/main.c:28:1: note: include '<string.h>' or provide a declaration of 'memcpy'
-   27 | #include "Cmn.h"
-  +++ |+#include <string.h>
-   28 | 
-../Core/Src/main.c:482:9: warning: incompatible implicit declaration of built-in function 'memcpy' [-Wbuiltin-declaration-mismatch]
-  482 |         memcpy(&TxData[0], &dht11_data.temperature, 4);
-      |         ^~~~~~
-../Core/Src/main.c:482:9: note: include '<string.h>' or provide a declaration of 'memcpy'
-../Core/Src/main.c:485:60: warning: passing argument 4 of 'HAL_CAN_AddTxMessage' from incompatible pointer type [-Wincompatible-pointer-types]
-  485 |         if (HAL_CAN_AddTxMessage(&hcan, &TxHeader, TxData, &TxMailbox) != HAL_OK){
-      |                                                            ^~~~~~~~~~
-      |                                                            |
-      |                                                            uint8_t * {aka unsigned char *}
-../Drivers/STM32F3xx_HAL_Driver/Inc/stm32f3xx_hal_can.h:684:73: note: expected 'uint32_t *' {aka 'long unsigned int *'} but argument is of type 'uint8_t *' {aka 'unsigned char *'}
-  684 |                                        const uint8_t aData[], uint32_t *pTxMailbox);
-      |                                                               ~~~~~~~~~~^~~~~~~~~~
-../Core/Src/main.c: In function 'TempHumiTask':
-../Core/Src/main.c:508:9: warning: implicit declaration of function 'printf' [-Wimplicit-function-declaration]
-  508 |         printf("Temp: %.2f C | Humidity: %.2f %%\r\n",
+../Core/Src/main.c:478:9: warning: implicit declaration of function 'printf' [-Wimplicit-function-declaration]
+  478 |         printf("Speed: %u\r\n", speed);
       |         ^~~~~~
 ../Core/Src/main.c:28:1: note: include '<stdio.h>' or provide a declaration of 'printf'
    27 | #include "Cmn.h"
   +++ |+#include <stdio.h>
    28 | 
-../Core/Src/main.c:508:9: warning: incompatible implicit declaration of built-in function 'printf' [-Wbuiltin-declaration-mismatch]
-  508 |         printf("Temp: %.2f C | Humidity: %.2f %%\r\n",
+../Core/Src/main.c:478:9: warning: incompatible implicit declaration of built-in function 'printf' [-Wbuiltin-declaration-mismatch]
+  478 |         printf("Speed: %u\r\n", speed);
       |         ^~~~~~
-../Core/Src/main.c:508:9: note: include '<stdio.h>' or provide a declaration of 'printf'
-arm-none-eabi-gcc -o "PWECU-FreeRtos.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\adity\STM32CubeIDE\workspace_1.19.0\DashBoard\PWECU-FreeRtos\STM32F302R8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="PWECU-FreeRtos.map" -Wl,--gc-sections -static -u _printf_float --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: PWECU-FreeRtos.elf
- 
-arm-none-eabi-size  PWECU-FreeRtos.elf 
-arm-none-eabi-objdump -h -S PWECU-FreeRtos.elf  > "PWECU-FreeRtos.list"
-   text	   data	    bss	    dec	    hex	filename
-  41900	    472	  10656	  53028	   cf24	PWECU-FreeRtos.elf
-Finished building: default.size.stdout
- 
-Finished building: PWECU-FreeRtos.list
- 
-18:04:01 **** Incremental Build of configuration Debug for project PWECU-FreeRtos ****
-make -j8 all 
-arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F302x8 -c -I../Core/Inc -I../Drivers/STM32F3xx_HAL_Driver/Inc -I../Drivers/STM32F3xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F3xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
-../Core/Src/main.c: In function 'CANTask':
-../Core/Src/main.c:475:60: warning: passing argument 4 of 'HAL_CAN_AddTxMessage' from incompatible pointer type [-Wincompatible-pointer-types]
-  475 |         if (HAL_CAN_AddTxMessage(&hcan, &TxHeader, TxData, &TxMailbox) != HAL_OK){
-      |                                                            ^~~~~~~~~~
-      |                                                            |
-      |                                                            uint8_t * {aka unsigned char *}
-In file included from ../Core/Inc/stm32f3xx_hal_conf.h:224,
-                 from ../Drivers/STM32F3xx_HAL_Driver/Inc/stm32f3xx_hal.h:29,
-                 from ../Core/Inc/main.h:30,
-                 from ../Core/Src/main.c:20:
-../Drivers/STM32F3xx_HAL_Driver/Inc/stm32f3xx_hal_can.h:684:73: note: expected 'uint32_t *' {aka 'long unsigned int *'} but argument is of type 'uint8_t *' {aka 'unsigned char *'}
-  684 |                                        const uint8_t aData[], uint32_t *pTxMailbox);
-      |                                                               ~~~~~~~~~~^~~~~~~~~~
-../Core/Src/main.c:482:17: warning: implicit declaration of function 'memcpy' [-Wimplicit-function-declaration]
-  482 |                 memcpy(&TxData[0], &dht11_data.temperature, 4);
+../Core/Src/main.c:478:9: note: include '<stdio.h>' or provide a declaration of 'printf'
+../Core/Src/main.c:489:17: warning: implicit declaration of function 'memcpy' [-Wimplicit-function-declaration]
+  489 |                 memcpy(&TxData[0], &dht11_data.temperature, 4);
       |                 ^~~~~~
 ../Core/Src/main.c:28:1: note: include '<string.h>' or provide a declaration of 'memcpy'
    27 | #include "Cmn.h"
   +++ |+#include <string.h>
    28 | 
-../Core/Src/main.c:482:17: warning: incompatible implicit declaration of built-in function 'memcpy' [-Wbuiltin-declaration-mismatch]
-  482 |                 memcpy(&TxData[0], &dht11_data.temperature, 4);
+../Core/Src/main.c:489:17: warning: incompatible implicit declaration of built-in function 'memcpy' [-Wbuiltin-declaration-mismatch]
+  489 |                 memcpy(&TxData[0], &dht11_data.temperature, 4);
       |                 ^~~~~~
-../Core/Src/main.c:482:17: note: include '<string.h>' or provide a declaration of 'memcpy'
-../Core/Src/main.c:485:68: warning: passing argument 4 of 'HAL_CAN_AddTxMessage' from incompatible pointer type [-Wincompatible-pointer-types]
-  485 |                 if (HAL_CAN_AddTxMessage(&hcan, &TxHeader, TxData, &TxMailbox) != HAL_OK){
-      |                                                                    ^~~~~~~~~~
-      |                                                                    |
-      |                                                                    uint8_t * {aka unsigned char *}
-../Drivers/STM32F3xx_HAL_Driver/Inc/stm32f3xx_hal_can.h:684:73: note: expected 'uint32_t *' {aka 'long unsigned int *'} but argument is of type 'uint8_t *' {aka 'unsigned char *'}
-  684 |                                        const uint8_t aData[], uint32_t *pTxMailbox);
-      |                                                               ~~~~~~~~~~^~~~~~~~~~
-../Core/Src/main.c: In function 'TempHumiTask':
-../Core/Src/main.c:508:9: warning: implicit declaration of function 'printf' [-Wimplicit-function-declaration]
-  508 |         printf("Temp: %.2f C | Humidity: %.2f %%\r\n",
-      |         ^~~~~~
-../Core/Src/main.c:28:1: note: include '<stdio.h>' or provide a declaration of 'printf'
-   27 | #include "Cmn.h"
-  +++ |+#include <stdio.h>
-   28 | 
-../Core/Src/main.c:508:9: warning: incompatible implicit declaration of built-in function 'printf' [-Wbuiltin-declaration-mismatch]
-  508 |         printf("Temp: %.2f C | Humidity: %.2f %%\r\n",
-      |         ^~~~~~
-../Core/Src/main.c:508:9: note: include '<stdio.h>' or provide a declaration of 'printf'
-arm-none-eabi-gcc -o "PWECU-FreeRtos.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\adity\STM32CubeIDE\workspace_1.19.0\DashBoard\PWECU-FreeRtos\STM32F302R8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="PWECU-FreeRtos.map" -Wl,--gc-sections -static -u _printf_float --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: PWECU-FreeRtos.elf
- 
-arm-none-eabi-size  PWECU-FreeRtos.elf 
-arm-none-eabi-objdump -h -S PWECU-FreeRtos.elf  > "PWECU-FreeRtos.list"
-   text	   data	    bss	    dec	    hex	filename
-  41916	    472	  10656	  53044	   cf34	PWECU-FreeRtos.elf
-Finished building: default.size.stdout
- 
-Finished building: PWECU-FreeRtos.list
- 
-18:05:43 **** Incremental Build of configuration Debug for project PWECU-FreeRtos ****
-make -j8 all 
-arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F302x8 -c -I../Core/Inc -I../Drivers/STM32F3xx_HAL_Driver/Inc -I../Drivers/STM32F3xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F3xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
-../Core/Src/main.c: In function 'CANTask':
-../Core/Src/main.c:476:60: warning: passing argument 4 of 'HAL_CAN_AddTxMessage' from incompatible pointer type [-Wincompatible-pointer-types]
-  476 |         if (HAL_CAN_AddTxMessage(&hcan, &TxHeader, TxData, &TxMailbox) != HAL_OK){
-      |                                                            ^~~~~~~~~~
-      |                                                            |
-      |                                                            uint8_t * {aka unsigned char *}
-In file included from ../Core/Inc/stm32f3xx_hal_conf.h:224,
-                 from ../Drivers/STM32F3xx_HAL_Driver/Inc/stm32f3xx_hal.h:29,
-                 from ../Core/Inc/main.h:30,
-                 from ../Core/Src/main.c:20:
-../Drivers/STM32F3xx_HAL_Driver/Inc/stm32f3xx_hal_can.h:684:73: note: expected 'uint32_t *' {aka 'long unsigned int *'} but argument is of type 'uint8_t *' {aka 'unsigned char *'}
-  684 |                                        const uint8_t aData[], uint32_t *pTxMailbox);
-      |                                                               ~~~~~~~~~~^~~~~~~~~~
-../Core/Src/main.c:484:17: warning: implicit declaration of function 'memcpy' [-Wimplicit-function-declaration]
-  484 |                 memcpy(&TxData[0], &dht11_data.temperature, 4);
-      |                 ^~~~~~
-../Core/Src/main.c:28:1: note: include '<string.h>' or provide a declaration of 'memcpy'
-   27 | #include "Cmn.h"
-  +++ |+#include <string.h>
-   28 | 
-../Core/Src/main.c:484:17: warning: incompatible implicit declaration of built-in function 'memcpy' [-Wbuiltin-declaration-mismatch]
-  484 |                 memcpy(&TxData[0], &dht11_data.temperature, 4);
-      |                 ^~~~~~
-../Core/Src/main.c:484:17: note: include '<string.h>' or provide a declaration of 'memcpy'
-../Core/Src/main.c:487:68: warning: passing argument 4 of 'HAL_CAN_AddTxMessage' from incompatible pointer type [-Wincompatible-pointer-types]
-  487 |                 if (HAL_CAN_AddTxMessage(&hcan, &TxHeader, TxData, &TxMailbox) != HAL_OK){
-      |                                                                    ^~~~~~~~~~
-      |                                                                    |
-      |                                                                    uint8_t * {aka unsigned char *}
-../Drivers/STM32F3xx_HAL_Driver/Inc/stm32f3xx_hal_can.h:684:73: note: expected 'uint32_t *' {aka 'long unsigned int *'} but argument is of type 'uint8_t *' {aka 'unsigned char *'}
-  684 |                                        const uint8_t aData[], uint32_t *pTxMailbox);
-      |                                                               ~~~~~~~~~~^~~~~~~~~~
-../Core/Src/main.c: In function 'TempHumiTask':
-../Core/Src/main.c:510:9: warning: implicit declaration of function 'printf' [-Wimplicit-function-declaration]
-  510 |         printf("Temp: %.2f C | Humidity: %.2f %%\r\n",
-      |         ^~~~~~
-../Core/Src/main.c:28:1: note: include '<stdio.h>' or provide a declaration of 'printf'
-   27 | #include "Cmn.h"
-  +++ |+#include <stdio.h>
-   28 | 
-../Core/Src/main.c:510:9: warning: incompatible implicit declaration of built-in function 'printf' [-Wbuiltin-declaration-mismatch]
-  510 |         printf("Temp: %.2f C | Humidity: %.2f %%\r\n",
-      |         ^~~~~~
-../Core/Src/main.c:510:9: note: include '<stdio.h>' or provide a declaration of 'printf'
-arm-none-eabi-gcc -o "PWECU-FreeRtos.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\adity\STM32CubeIDE\workspace_1.19.0\DashBoard\PWECU-FreeRtos\STM32F302R8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="PWECU-FreeRtos.map" -Wl,--gc-sections -static -u _printf_float --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: PWECU-FreeRtos.elf
- 
-arm-none-eabi-size  PWECU-FreeRtos.elf 
-arm-none-eabi-objdump -h -S PWECU-FreeRtos.elf  > "PWECU-FreeRtos.list"
-   text	   data	    bss	    dec	    hex	filename
-  41916	    472	  10656	  53044	   cf34	PWECU-FreeRtos.elf
-Finished building: default.size.stdout
- 
-Finished building: PWECU-FreeRtos.list
- 
-18:06:07 **** Incremental Build of configuration Debug for project PWECU-FreeRtos ****
-make -j8 all 
-arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F302x8 -c -I../Core/Inc -I../Drivers/STM32F3xx_HAL_Driver/Inc -I../Drivers/STM32F3xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F3xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
-../Core/Src/main.c: In function 'CANTask':
-../Core/Src/main.c:476:60: warning: passing argument 4 of 'HAL_CAN_AddTxMessage' from incompatible pointer type [-Wincompatible-pointer-types]
-  476 |         if (HAL_CAN_AddTxMessage(&hcan, &TxHeader, TxData, &TxMailbox) != HAL_OK){
-      |                                                            ^~~~~~~~~~
-      |                                                            |
-      |                                                            uint8_t * {aka unsigned char *}
-In file included from ../Core/Inc/stm32f3xx_hal_conf.h:224,
-                 from ../Drivers/STM32F3xx_HAL_Driver/Inc/stm32f3xx_hal.h:29,
-                 from ../Core/Inc/main.h:30,
-                 from ../Core/Src/main.c:20:
-../Drivers/STM32F3xx_HAL_Driver/Inc/stm32f3xx_hal_can.h:684:73: note: expected 'uint32_t *' {aka 'long unsigned int *'} but argument is of type 'uint8_t *' {aka 'unsigned char *'}
-  684 |                                        const uint8_t aData[], uint32_t *pTxMailbox);
-      |                                                               ~~~~~~~~~~^~~~~~~~~~
-../Core/Src/main.c:484:17: warning: implicit declaration of function 'memcpy' [-Wimplicit-function-declaration]
-  484 |                 memcpy(&TxData[0], &dht11_data.temperature, 4);
-      |                 ^~~~~~
-../Core/Src/main.c:28:1: note: include '<string.h>' or provide a declaration of 'memcpy'
-   27 | #include "Cmn.h"
-  +++ |+#include <string.h>
-   28 | 
-../Core/Src/main.c:484:17: warning: incompatible implicit declaration of built-in function 'memcpy' [-Wbuiltin-declaration-mismatch]
-  484 |                 memcpy(&TxData[0], &dht11_data.temperature, 4);
-      |                 ^~~~~~
-../Core/Src/main.c:484:17: note: include '<string.h>' or provide a declaration of 'memcpy'
-../Core/Src/main.c:487:68: warning: passing argument 4 of 'HAL_CAN_AddTxMessage' from incompatible pointer type [-Wincompatible-pointer-types]
-  487 |                 if (HAL_CAN_AddTxMessage(&hcan, &TxHeader, TxData, &TxMailbox) != HAL_OK){
-      |                                                                    ^~~~~~~~~~
-      |                                                                    |
-      |                                                                    uint8_t * {aka unsigned char *}
-../Drivers/STM32F3xx_HAL_Driver/Inc/stm32f3xx_hal_can.h:684:73: note: expected 'uint32_t *' {aka 'long unsigned int *'} but argument is of type 'uint8_t *' {aka 'unsigned char *'}
-  684 |                                        const uint8_t aData[], uint32_t *pTxMailbox);
-      |                                                               ~~~~~~~~~~^~~~~~~~~~
-arm-none-eabi-gcc -o "PWECU-FreeRtos.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\adity\STM32CubeIDE\workspace_1.19.0\DashBoard\PWECU-FreeRtos\STM32F302R8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="PWECU-FreeRtos.map" -Wl,--gc-sections -static -u _printf_float --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: PWECU-FreeRtos.elf
- 
-arm-none-eabi-size  PWECU-FreeRtos.elf 
-arm-none-eabi-objdump -h -S PWECU-FreeRtos.elf  > "PWECU-FreeRtos.list"
-   text	   data	    bss	    dec	    hex	filename
-  41800	    472	  10656	  52928	   cec0	PWECU-FreeRtos.elf
-Finished building: default.size.stdout
- 
-Finished building: PWECU-FreeRtos.list
- 
-18:10:26 **** Incremental Build of configuration Debug for project PWECU-FreeRtos ****
-make -j8 all 
-arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F302x8 -c -I../Core/Inc -I../Drivers/STM32F3xx_HAL_Driver/Inc -I../Drivers/STM32F3xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F3xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
-../Core/Src/main.c: In function 'CANTask':
-../Core/Src/main.c:476:9: warning: implicit declaration of function 'printf' [-Wimplicit-function-declaration]
-  476 |         printf("Speed: %u\r\n", speed);
-      |         ^~~~~~
-../Core/Src/main.c:28:1: note: include '<stdio.h>' or provide a declaration of 'printf'
-   27 | #include "Cmn.h"
-  +++ |+#include <stdio.h>
-   28 | 
-../Core/Src/main.c:476:9: warning: incompatible implicit declaration of built-in function 'printf' [-Wbuiltin-declaration-mismatch]
-  476 |         printf("Speed: %u\r\n", speed);
-      |         ^~~~~~
-../Core/Src/main.c:476:9: note: include '<stdio.h>' or provide a declaration of 'printf'
-../Core/Src/main.c:477:60: warning: passing argument 4 of 'HAL_CAN_AddTxMessage' from incompatible pointer type [-Wincompatible-pointer-types]
-  477 |         if (HAL_CAN_AddTxMessage(&hcan, &TxHeader, TxData, &TxMailbox) != HAL_OK){
-      |                                                            ^~~~~~~~~~
-      |                                                            |
-      |                                                            uint8_t * {aka unsigned char *}
-In file included from ../Core/Inc/stm32f3xx_hal_conf.h:224,
-                 from ../Drivers/STM32F3xx_HAL_Driver/Inc/stm32f3xx_hal.h:29,
-                 from ../Core/Inc/main.h:30,
-                 from ../Core/Src/main.c:20:
-../Drivers/STM32F3xx_HAL_Driver/Inc/stm32f3xx_hal_can.h:684:73: note: expected 'uint32_t *' {aka 'long unsigned int *'} but argument is of type 'uint8_t *' {aka 'unsigned char *'}
-  684 |                                        const uint8_t aData[], uint32_t *pTxMailbox);
-      |                                                               ~~~~~~~~~~^~~~~~~~~~
-../Core/Src/main.c:487:17: warning: implicit declaration of function 'memcpy' [-Wimplicit-function-declaration]
-  487 |                 memcpy(&TxData[0], &dht11_data.temperature, 4);
-      |                 ^~~~~~
-../Core/Src/main.c:28:1: note: include '<string.h>' or provide a declaration of 'memcpy'
-   27 | #include "Cmn.h"
-  +++ |+#include <string.h>
-   28 | 
-../Core/Src/main.c:487:17: warning: incompatible implicit declaration of built-in function 'memcpy' [-Wbuiltin-declaration-mismatch]
-  487 |                 memcpy(&TxData[0], &dht11_data.temperature, 4);
-      |                 ^~~~~~
-../Core/Src/main.c:487:17: note: include '<string.h>' or provide a declaration of 'memcpy'
-../Core/Src/main.c:490:68: warning: passing argument 4 of 'HAL_CAN_AddTxMessage' from incompatible pointer type [-Wincompatible-pointer-types]
-  490 |                 if (HAL_CAN_AddTxMessage(&hcan, &TxHeader, TxData, &TxMailbox) != HAL_OK){
-      |                                                                    ^~~~~~~~~~
-      |                                                                    |
-      |                                                                    uint8_t * {aka unsigned char *}
-../Drivers/STM32F3xx_HAL_Driver/Inc/stm32f3xx_hal_can.h:684:73: note: expected 'uint32_t *' {aka 'long unsigned int *'} but argument is of type 'uint8_t *' {aka 'unsigned char *'}
-  684 |                                        const uint8_t aData[], uint32_t *pTxMailbox);
-      |                                                               ~~~~~~~~~~^~~~~~~~~~
-arm-none-eabi-gcc -o "PWECU-FreeRtos.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\adity\STM32CubeIDE\workspace_1.19.0\DashBoard\PWECU-FreeRtos\STM32F302R8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="PWECU-FreeRtos.map" -Wl,--gc-sections -static -u _printf_float --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: PWECU-FreeRtos.elf
- 
-arm-none-eabi-size  PWECU-FreeRtos.elf 
-arm-none-eabi-objdump -h -S PWECU-FreeRtos.elf  > "PWECU-FreeRtos.list"
-   text	   data	    bss	    dec	    hex	filename
-  41932	    472	  10656	  53060	   cf44	PWECU-FreeRtos.elf
-Finished building: default.size.stdout
- 
-Finished building: PWECU-FreeRtos.list
- 
-18:10:59 **** Incremental Build of configuration Debug for project PWECU-FreeRtos ****
-make -j8 all 
-arm-none-eabi-size  PWECU-FreeRtos.elf 
-   text	   data	    bss	    dec	    hex	filename
-  41932	    472	  10656	  53060	   cf44	PWECU-FreeRtos.elf
-Finished building: default.size.stdout
- 
-18:13:47 **** Incremental Build of configuration Debug for project PWECU-FreeRtos ****
-make -j8 all 
-arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F302x8 -c -I../Core/Inc -I../Drivers/STM32F3xx_HAL_Driver/Inc -I../Drivers/STM32F3xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F3xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
-../Core/Src/main.c: In function 'CANTask':
-../Core/Src/main.c:476:9: warning: implicit declaration of function 'printf' [-Wimplicit-function-declaration]
-  476 |         printf("Speed: %u\r\n", speed);
-      |         ^~~~~~
-../Core/Src/main.c:28:1: note: include '<stdio.h>' or provide a declaration of 'printf'
-   27 | #include "Cmn.h"
-  +++ |+#include <stdio.h>
-   28 | 
-../Core/Src/main.c:476:9: warning: incompatible implicit declaration of built-in function 'printf' [-Wbuiltin-declaration-mismatch]
-  476 |         printf("Speed: %u\r\n", speed);
-      |         ^~~~~~
-../Core/Src/main.c:476:9: note: include '<stdio.h>' or provide a declaration of 'printf'
-../Core/Src/main.c:487:17: warning: implicit declaration of function 'memcpy' [-Wimplicit-function-declaration]
-  487 |                 memcpy(&TxData[0], &dht11_data.temperature, 4);
-      |                 ^~~~~~
-../Core/Src/main.c:28:1: note: include '<string.h>' or provide a declaration of 'memcpy'
-   27 | #include "Cmn.h"
-  +++ |+#include <string.h>
-   28 | 
-../Core/Src/main.c:487:17: warning: incompatible implicit declaration of built-in function 'memcpy' [-Wbuiltin-declaration-mismatch]
-  487 |                 memcpy(&TxData[0], &dht11_data.temperature, 4);
-      |                 ^~~~~~
-../Core/Src/main.c:487:17: note: include '<string.h>' or provide a declaration of 'memcpy'
-arm-none-eabi-gcc -o "PWECU-FreeRtos.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\adity\STM32CubeIDE\workspace_1.19.0\DashBoard\PWECU-FreeRtos\STM32F302R8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="PWECU-FreeRtos.map" -Wl,--gc-sections -static -u _printf_float --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: PWECU-FreeRtos.elf
- 
-arm-none-eabi-size  PWECU-FreeRtos.elf 
-arm-none-eabi-objdump -h -S PWECU-FreeRtos.elf  > "PWECU-FreeRtos.list"
-   text	   data	    bss	    dec	    hex	filename
-  41932	    472	  10656	  53060	   cf44	PWECU-FreeRtos.elf
-Finished building: default.size.stdout
- 
-Finished building: PWECU-FreeRtos.list
- 
-18:17:14 **** Incremental Build of configuration Debug for project PWECU-FreeRtos ****
-make -j8 all 
-arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F302x8 -c -I../Core/Inc -I../Drivers/STM32F3xx_HAL_Driver/Inc -I../Drivers/STM32F3xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F3xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
-../Core/Src/main.c: In function 'CANTask':
-../Core/Src/main.c:476:9: warning: implicit declaration of function 'printf' [-Wimplicit-function-declaration]
-  476 |         printf("Speed: %u\r\n", speed);
-      |         ^~~~~~
-../Core/Src/main.c:28:1: note: include '<stdio.h>' or provide a declaration of 'printf'
-   27 | #include "Cmn.h"
-  +++ |+#include <stdio.h>
-   28 | 
-../Core/Src/main.c:476:9: warning: incompatible implicit declaration of built-in function 'printf' [-Wbuiltin-declaration-mismatch]
-  476 |         printf("Speed: %u\r\n", speed);
-      |         ^~~~~~
-../Core/Src/main.c:476:9: note: include '<stdio.h>' or provide a declaration of 'printf'
-../Core/Src/main.c:487:17: warning: implicit declaration of function 'memcpy' [-Wimplicit-function-declaration]
-  487 |                 memcpy(&TxData[0], &dht11_data.temperature, 4);
-      |                 ^~~~~~
-../Core/Src/main.c:28:1: note: include '<string.h>' or provide a declaration of 'memcpy'
-   27 | #include "Cmn.h"
-  +++ |+#include <string.h>
-   28 | 
-../Core/Src/main.c:487:17: warning: incompatible implicit declaration of built-in function 'memcpy' [-Wbuiltin-declaration-mismatch]
-  487 |                 memcpy(&TxData[0], &dht11_data.temperature, 4);
-      |                 ^~~~~~
-../Core/Src/main.c:487:17: note: include '<string.h>' or provide a declaration of 'memcpy'
-arm-none-eabi-gcc -o "PWECU-FreeRtos.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\adity\STM32CubeIDE\workspace_1.19.0\DashBoard\PWECU-FreeRtos\STM32F302R8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="PWECU-FreeRtos.map" -Wl,--gc-sections -static -u _printf_float --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: PWECU-FreeRtos.elf
- 
-arm-none-eabi-size  PWECU-FreeRtos.elf 
-arm-none-eabi-objdump -h -S PWECU-FreeRtos.elf  > "PWECU-FreeRtos.list"
-   text	   data	    bss	    dec	    hex	filename
-  41932	    472	  10656	  53060	   cf44	PWECU-FreeRtos.elf
-Finished building: default.size.stdout
- 
-Finished building: PWECU-FreeRtos.list
- 
-18:18:33 **** Incremental Build of configuration Debug for project PWECU-FreeRtos ****
-make -j8 all 
-arm-none-eabi-gcc "../Middlewares/Third_Party/FreeRTOS/Source/portable/MemMang/heap_4.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F302x8 -c -I../Core/Inc -I../Drivers/STM32F3xx_HAL_Driver/Inc -I../Drivers/STM32F3xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F3xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Middlewares/Third_Party/FreeRTOS/Source/portable/MemMang/heap_4.d" -MT"Middlewares/Third_Party/FreeRTOS/Source/portable/MemMang/heap_4.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Middlewares/Third_Party/FreeRTOS/Source/portable/MemMang/heap_4.o"
-arm-none-eabi-gcc "../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F/port.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F302x8 -c -I../Core/Inc -I../Drivers/STM32F3xx_HAL_Driver/Inc -I../Drivers/STM32F3xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F3xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F/port.d" -MT"Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F/port.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F/port.o"
-arm-none-eabi-gcc "../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os2.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F302x8 -c -I../Core/Inc -I../Drivers/STM32F3xx_HAL_Driver/Inc -I../Drivers/STM32F3xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F3xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os2.d" -MT"Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os2.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os2.o"
-arm-none-eabi-gcc "../Middlewares/Third_Party/FreeRTOS/Source/croutine.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F302x8 -c -I../Core/Inc -I../Drivers/STM32F3xx_HAL_Driver/Inc -I../Drivers/STM32F3xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F3xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Middlewares/Third_Party/FreeRTOS/Source/croutine.d" -MT"Middlewares/Third_Party/FreeRTOS/Source/croutine.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Middlewares/Third_Party/FreeRTOS/Source/croutine.o"
-arm-none-eabi-gcc "../Middlewares/Third_Party/FreeRTOS/Source/event_groups.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F302x8 -c -I../Core/Inc -I../Drivers/STM32F3xx_HAL_Driver/Inc -I../Drivers/STM32F3xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F3xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Middlewares/Third_Party/FreeRTOS/Source/event_groups.d" -MT"Middlewares/Third_Party/FreeRTOS/Source/event_groups.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Middlewares/Third_Party/FreeRTOS/Source/event_groups.o"
-arm-none-eabi-gcc "../Middlewares/Third_Party/FreeRTOS/Source/list.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F302x8 -c -I../Core/Inc -I../Drivers/STM32F3xx_HAL_Driver/Inc -I../Drivers/STM32F3xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F3xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Middlewares/Third_Party/FreeRTOS/Source/list.d" -MT"Middlewares/Third_Party/FreeRTOS/Source/list.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Middlewares/Third_Party/FreeRTOS/Source/list.o"
-arm-none-eabi-gcc "../Middlewares/Third_Party/FreeRTOS/Source/queue.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F302x8 -c -I../Core/Inc -I../Drivers/STM32F3xx_HAL_Driver/Inc -I../Drivers/STM32F3xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F3xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Middlewares/Third_Party/FreeRTOS/Source/queue.d" -MT"Middlewares/Third_Party/FreeRTOS/Source/queue.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Middlewares/Third_Party/FreeRTOS/Source/queue.o"
-arm-none-eabi-gcc "../Middlewares/Third_Party/FreeRTOS/Source/stream_buffer.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F302x8 -c -I../Core/Inc -I../Drivers/STM32F3xx_HAL_Driver/Inc -I../Drivers/STM32F3xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F3xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Middlewares/Third_Party/FreeRTOS/Source/stream_buffer.d" -MT"Middlewares/Third_Party/FreeRTOS/Source/stream_buffer.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Middlewares/Third_Party/FreeRTOS/Source/stream_buffer.o"
-arm-none-eabi-gcc "../Middlewares/Third_Party/FreeRTOS/Source/tasks.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F302x8 -c -I../Core/Inc -I../Drivers/STM32F3xx_HAL_Driver/Inc -I../Drivers/STM32F3xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F3xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Middlewares/Third_Party/FreeRTOS/Source/tasks.d" -MT"Middlewares/Third_Party/FreeRTOS/Source/tasks.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Middlewares/Third_Party/FreeRTOS/Source/tasks.o"
-arm-none-eabi-gcc "../Middlewares/Third_Party/FreeRTOS/Source/timers.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F302x8 -c -I../Core/Inc -I../Drivers/STM32F3xx_HAL_Driver/Inc -I../Drivers/STM32F3xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F3xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Middlewares/Third_Party/FreeRTOS/Source/timers.d" -MT"Middlewares/Third_Party/FreeRTOS/Source/timers.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Middlewares/Third_Party/FreeRTOS/Source/timers.o"
-arm-none-eabi-gcc "../Core/Src/freertos.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F302x8 -c -I../Core/Inc -I../Drivers/STM32F3xx_HAL_Driver/Inc -I../Drivers/STM32F3xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F3xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/freertos.d" -MT"Core/Src/freertos.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/freertos.o"
-arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F302x8 -c -I../Core/Inc -I../Drivers/STM32F3xx_HAL_Driver/Inc -I../Drivers/STM32F3xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F3xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
-../Core/Src/main.c: In function 'CANTask':
-../Core/Src/main.c:476:9: warning: implicit declaration of function 'printf' [-Wimplicit-function-declaration]
-  476 |         printf("Speed: %u\r\n", speed);
-      |         ^~~~~~
-../Core/Src/main.c:28:1: note: include '<stdio.h>' or provide a declaration of 'printf'
-   27 | #include "Cmn.h"
-  +++ |+#include <stdio.h>
-   28 | 
-../Core/Src/main.c:476:9: warning: incompatible implicit declaration of built-in function 'printf' [-Wbuiltin-declaration-mismatch]
-  476 |         printf("Speed: %u\r\n", speed);
-      |         ^~~~~~
-../Core/Src/main.c:476:9: note: include '<stdio.h>' or provide a declaration of 'printf'
-../Core/Src/main.c:487:17: warning: implicit declaration of function 'memcpy' [-Wimplicit-function-declaration]
-  487 |                 memcpy(&TxData[0], &dht11_data.temperature, 4);
-      |                 ^~~~~~
-../Core/Src/main.c:28:1: note: include '<string.h>' or provide a declaration of 'memcpy'
-   27 | #include "Cmn.h"
-  +++ |+#include <string.h>
-   28 | 
-../Core/Src/main.c:487:17: warning: incompatible implicit declaration of built-in function 'memcpy' [-Wbuiltin-declaration-mismatch]
-  487 |                 memcpy(&TxData[0], &dht11_data.temperature, 4);
-      |                 ^~~~~~
-../Core/Src/main.c:487:17: note: include '<string.h>' or provide a declaration of 'memcpy'
+../Core/Src/main.c:489:17: note: include '<string.h>' or provide a declaration of 'memcpy'
 arm-none-eabi-gcc -o "PWECU-FreeRtos.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\adity\STM32CubeIDE\workspace_1.19.0\DashBoard\PWECU-FreeRtos\STM32F302R8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="PWECU-FreeRtos.map" -Wl,--gc-sections -static -u _printf_float --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
 Finished building target: PWECU-FreeRtos.elf
  
@@ -593,38 +136,233 @@ Finished building: default.size.stdout
  
 Finished building: PWECU-FreeRtos.list
  
-18:19:04 **** Incremental Build of configuration Debug for project PWECU-FreeRtos ****
+00:17:46 **** Incremental Build of configuration Debug for project PWECU-FreeRtos ****
 make -j8 all 
 arm-none-eabi-size  PWECU-FreeRtos.elf 
    text	   data	    bss	    dec	    hex	filename
   41932	    472	  15656	  58060	   e2cc	PWECU-FreeRtos.elf
 Finished building: default.size.stdout
  
-18:19:52 **** Incremental Build of configuration Debug for project PWECU-FreeRtos ****
+00:19:04 **** Incremental Build of configuration Debug for project PWECU-FreeRtos ****
 make -j8 all 
 arm-none-eabi-size  PWECU-FreeRtos.elf 
    text	   data	    bss	    dec	    hex	filename
   41932	    472	  15656	  58060	   e2cc	PWECU-FreeRtos.elf
 Finished building: default.size.stdout
  
-18:21:08 **** Incremental Build of configuration Debug for project GatewayECU-FreeRtos ****
+00:23:21 **** Incremental Build of configuration Debug for project PWECU-FreeRtos ****
 make -j8 all 
-arm-none-eabi-size  GatewayECU-FreeRtos.elf 
+arm-none-eabi-size  PWECU-FreeRtos.elf 
    text	   data	    bss	    dec	    hex	filename
-  53816	    472	  21200	  75488	  126e0	GatewayECU-FreeRtos.elf
+  41932	    472	  15656	  58060	   e2cc	PWECU-FreeRtos.elf
 Finished building: default.size.stdout
  
-18:21:53 **** Incremental Build of configuration Debug for project GatewayECU-FreeRtos ****
+22:32:47 **** Incremental Build of configuration Debug for project PWECU-FreeRtos ****
 make -j8 all 
-arm-none-eabi-size  GatewayECU-FreeRtos.elf 
+arm-none-eabi-size  PWECU-FreeRtos.elf 
    text	   data	    bss	    dec	    hex	filename
-  53816	    472	  21200	  75488	  126e0	GatewayECU-FreeRtos.elf
+  41932	    472	  15656	  58060	   e2cc	PWECU-FreeRtos.elf
 Finished building: default.size.stdout
  
-18:22:23 **** Incremental Build of configuration Debug for project GatewayECU-FreeRtos ****
+22:33:12 **** Incremental Build of configuration Debug for project PWECU-FreeRtos ****
+make -j8 all 
+arm-none-eabi-size  PWECU-FreeRtos.elf 
+   text	   data	    bss	    dec	    hex	filename
+  41932	    472	  15656	  58060	   e2cc	PWECU-FreeRtos.elf
+Finished building: default.size.stdout
+ 
+22:33:29 **** Incremental Build of configuration Debug for project GatewayECU-FreeRtos ****
 make -j8 all 
 arm-none-eabi-size  GatewayECU-FreeRtos.elf 
    text	   data	    bss	    dec	    hex	filename
-  53816	    472	  21200	  75488	  126e0	GatewayECU-FreeRtos.elf
+  54072	    472	  21272	  75816	  12828	GatewayECU-FreeRtos.elf
+Finished building: default.size.stdout
+ 
+22:34:57 **** Incremental Build of configuration Debug for project GatewayECU-FreeRtos ****
+make -j8 all 
+arm-none-eabi-size  GatewayECU-FreeRtos.elf 
+   text	   data	    bss	    dec	    hex	filename
+  54072	    472	  21272	  75816	  12828	GatewayECU-FreeRtos.elf
+Finished building: default.size.stdout
+ 
+22:35:13 **** Incremental Build of configuration Debug for project PWECU-FreeRtos ****
+make -j8 all 
+arm-none-eabi-size  PWECU-FreeRtos.elf 
+   text	   data	    bss	    dec	    hex	filename
+  41932	    472	  15656	  58060	   e2cc	PWECU-FreeRtos.elf
+Finished building: default.size.stdout
+ 
+22:37:05 **** Incremental Build of configuration Debug for project PWECU-FreeRtos ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F302x8 -c -I../Core/Inc -I../Drivers/STM32F3xx_HAL_Driver/Inc -I../Drivers/STM32F3xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F3xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'CANTask':
+../Core/Src/main.c:478:9: warning: implicit declaration of function 'printf' [-Wimplicit-function-declaration]
+  478 |         printf("Speed: %u\r\n", speed);
+      |         ^~~~~~
+../Core/Src/main.c:28:1: note: include '<stdio.h>' or provide a declaration of 'printf'
+   27 | #include "Cmn.h"
+  +++ |+#include <stdio.h>
+   28 | 
+../Core/Src/main.c:478:9: warning: incompatible implicit declaration of built-in function 'printf' [-Wbuiltin-declaration-mismatch]
+  478 |         printf("Speed: %u\r\n", speed);
+      |         ^~~~~~
+../Core/Src/main.c:478:9: note: include '<stdio.h>' or provide a declaration of 'printf'
+../Core/Src/main.c:487:17: warning: implicit declaration of function 'memcpy' [-Wimplicit-function-declaration]
+  487 |                 memcpy(&TxData[0], &dht11_data.temperature, 4);
+      |                 ^~~~~~
+../Core/Src/main.c:28:1: note: include '<string.h>' or provide a declaration of 'memcpy'
+   27 | #include "Cmn.h"
+  +++ |+#include <string.h>
+   28 | 
+../Core/Src/main.c:487:17: warning: incompatible implicit declaration of built-in function 'memcpy' [-Wbuiltin-declaration-mismatch]
+  487 |                 memcpy(&TxData[0], &dht11_data.temperature, 4);
+      |                 ^~~~~~
+../Core/Src/main.c:487:17: note: include '<string.h>' or provide a declaration of 'memcpy'
+arm-none-eabi-gcc -o "PWECU-FreeRtos.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\adity\STM32CubeIDE\workspace_1.19.0\DashBoard\PWECU-FreeRtos\STM32F302R8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="PWECU-FreeRtos.map" -Wl,--gc-sections -static -u _printf_float --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: PWECU-FreeRtos.elf
+ 
+arm-none-eabi-size  PWECU-FreeRtos.elf 
+arm-none-eabi-objdump -h -S PWECU-FreeRtos.elf  > "PWECU-FreeRtos.list"
+   text	   data	    bss	    dec	    hex	filename
+  41916	    472	  15656	  58044	   e2bc	PWECU-FreeRtos.elf
+Finished building: default.size.stdout
+ 
+Finished building: PWECU-FreeRtos.list
+ 
+22:38:27 **** Incremental Build of configuration Debug for project PWECU-FreeRtos ****
+make -j8 all 
+arm-none-eabi-size  PWECU-FreeRtos.elf 
+   text	   data	    bss	    dec	    hex	filename
+  41916	    472	  15656	  58044	   e2bc	PWECU-FreeRtos.elf
+Finished building: default.size.stdout
+ 
+22:38:36 **** Incremental Build of configuration Debug for project PWECU-FreeRtos ****
+make -j8 all 
+arm-none-eabi-size  PWECU-FreeRtos.elf 
+   text	   data	    bss	    dec	    hex	filename
+  41916	    472	  15656	  58044	   e2bc	PWECU-FreeRtos.elf
+Finished building: default.size.stdout
+ 
+22:38:49 **** Incremental Build of configuration Debug for project GatewayECU-FreeRtos ****
+make -j8 all 
+arm-none-eabi-size  GatewayECU-FreeRtos.elf 
+   text	   data	    bss	    dec	    hex	filename
+  54072	    472	  21272	  75816	  12828	GatewayECU-FreeRtos.elf
+Finished building: default.size.stdout
+ 
+22:41:41 **** Incremental Build of configuration Debug for project GatewayECU-FreeRtos ****
+make -j8 all 
+arm-none-eabi-size  GatewayECU-FreeRtos.elf 
+   text	   data	    bss	    dec	    hex	filename
+  54072	    472	  21272	  75816	  12828	GatewayECU-FreeRtos.elf
+Finished building: default.size.stdout
+ 
+22:41:56 **** Incremental Build of configuration Debug for project PWECU-FreeRtos ****
+make -j8 all 
+arm-none-eabi-size  PWECU-FreeRtos.elf 
+   text	   data	    bss	    dec	    hex	filename
+  41916	    472	  15656	  58044	   e2bc	PWECU-FreeRtos.elf
+Finished building: default.size.stdout
+ 
+22:42:11 **** Incremental Build of configuration Debug for project GatewayECU-FreeRtos ****
+make -j8 all 
+arm-none-eabi-size  GatewayECU-FreeRtos.elf 
+   text	   data	    bss	    dec	    hex	filename
+  54072	    472	  21272	  75816	  12828	GatewayECU-FreeRtos.elf
+Finished building: default.size.stdout
+ 
+22:55:28 **** Incremental Build of configuration Debug for project GatewayECU-FreeRtos ****
+make -j8 all 
+arm-none-eabi-size  GatewayECU-FreeRtos.elf 
+   text	   data	    bss	    dec	    hex	filename
+  54072	    472	  21272	  75816	  12828	GatewayECU-FreeRtos.elf
+Finished building: default.size.stdout
+ 
+22:55:36 **** Incremental Build of configuration Debug for project PWECU-FreeRtos ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F302x8 -c -I../Core/Inc -I../Drivers/STM32F3xx_HAL_Driver/Inc -I../Drivers/STM32F3xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F3xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'CANTask':
+../Core/Src/main.c:478:9: warning: implicit declaration of function 'printf' [-Wimplicit-function-declaration]
+  478 |         printf("Speed: %u\r\n", speed);
+      |         ^~~~~~
+../Core/Src/main.c:28:1: note: include '<stdio.h>' or provide a declaration of 'printf'
+   27 | #include "Cmn.h"
+  +++ |+#include <stdio.h>
+   28 | 
+../Core/Src/main.c:478:9: warning: incompatible implicit declaration of built-in function 'printf' [-Wbuiltin-declaration-mismatch]
+  478 |         printf("Speed: %u\r\n", speed);
+      |         ^~~~~~
+../Core/Src/main.c:478:9: note: include '<stdio.h>' or provide a declaration of 'printf'
+../Core/Src/main.c:491:17: warning: implicit declaration of function 'memcpy' [-Wimplicit-function-declaration]
+  491 |                 memcpy(&TxData[0], &dht11_data.temperature, 4);
+      |                 ^~~~~~
+../Core/Src/main.c:28:1: note: include '<string.h>' or provide a declaration of 'memcpy'
+   27 | #include "Cmn.h"
+  +++ |+#include <string.h>
+   28 | 
+../Core/Src/main.c:491:17: warning: incompatible implicit declaration of built-in function 'memcpy' [-Wbuiltin-declaration-mismatch]
+  491 |                 memcpy(&TxData[0], &dht11_data.temperature, 4);
+      |                 ^~~~~~
+../Core/Src/main.c:491:17: note: include '<string.h>' or provide a declaration of 'memcpy'
+arm-none-eabi-gcc -o "PWECU-FreeRtos.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\adity\STM32CubeIDE\workspace_1.19.0\DashBoard\PWECU-FreeRtos\STM32F302R8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="PWECU-FreeRtos.map" -Wl,--gc-sections -static -u _printf_float --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: PWECU-FreeRtos.elf
+ 
+arm-none-eabi-size  PWECU-FreeRtos.elf 
+arm-none-eabi-objdump -h -S PWECU-FreeRtos.elf  > "PWECU-FreeRtos.list"
+   text	   data	    bss	    dec	    hex	filename
+  41948	    472	  15656	  58076	   e2dc	PWECU-FreeRtos.elf
+Finished building: default.size.stdout
+ 
+Finished building: PWECU-FreeRtos.list
+ 
+22:58:09 **** Incremental Build of configuration Debug for project PWECU-FreeRtos ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F302x8 -c -I../Core/Inc -I../Drivers/STM32F3xx_HAL_Driver/Inc -I../Drivers/STM32F3xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F3xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'CANTask':
+../Core/Src/main.c:478:9: warning: implicit declaration of function 'printf' [-Wimplicit-function-declaration]
+  478 |         printf("Speed: %u\r\n", speed);
+      |         ^~~~~~
+../Core/Src/main.c:28:1: note: include '<stdio.h>' or provide a declaration of 'printf'
+   27 | #include "Cmn.h"
+  +++ |+#include <stdio.h>
+   28 | 
+../Core/Src/main.c:478:9: warning: incompatible implicit declaration of built-in function 'printf' [-Wbuiltin-declaration-mismatch]
+  478 |         printf("Speed: %u\r\n", speed);
+      |         ^~~~~~
+../Core/Src/main.c:478:9: note: include '<stdio.h>' or provide a declaration of 'printf'
+../Core/Src/main.c:491:17: warning: implicit declaration of function 'memcpy' [-Wimplicit-function-declaration]
+  491 |                 memcpy(&TxData[0], &dht11_data.temperature, 4);
+      |                 ^~~~~~
+../Core/Src/main.c:28:1: note: include '<string.h>' or provide a declaration of 'memcpy'
+   27 | #include "Cmn.h"
+  +++ |+#include <string.h>
+   28 | 
+../Core/Src/main.c:491:17: warning: incompatible implicit declaration of built-in function 'memcpy' [-Wbuiltin-declaration-mismatch]
+  491 |                 memcpy(&TxData[0], &dht11_data.temperature, 4);
+      |                 ^~~~~~
+../Core/Src/main.c:491:17: note: include '<string.h>' or provide a declaration of 'memcpy'
+arm-none-eabi-gcc -o "PWECU-FreeRtos.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\adity\STM32CubeIDE\workspace_1.19.0\DashBoard\PWECU-FreeRtos\STM32F302R8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="PWECU-FreeRtos.map" -Wl,--gc-sections -static -u _printf_float --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: PWECU-FreeRtos.elf
+ 
+arm-none-eabi-size  PWECU-FreeRtos.elf 
+arm-none-eabi-objdump -h -S PWECU-FreeRtos.elf  > "PWECU-FreeRtos.list"
+   text	   data	    bss	    dec	    hex	filename
+  41948	    472	  15656	  58076	   e2dc	PWECU-FreeRtos.elf
+Finished building: default.size.stdout
+ 
+Finished building: PWECU-FreeRtos.list
+ 
+22:58:39 **** Incremental Build of configuration Debug for project GatewayECU-FreeRtos ****
+make -j8 all 
+arm-none-eabi-size  GatewayECU-FreeRtos.elf 
+   text	   data	    bss	    dec	    hex	filename
+  54072	    472	  21272	  75816	  12828	GatewayECU-FreeRtos.elf
+Finished building: default.size.stdout
+ 
+22:58:41 **** Incremental Build of configuration Debug for project PWECU-FreeRtos ****
+make -j8 all 
+arm-none-eabi-size  PWECU-FreeRtos.elf 
+   text	   data	    bss	    dec	    hex	filename
+  41948	    472	  15656	  58076	   e2dc	PWECU-FreeRtos.elf
 Finished building: default.size.stdout
  

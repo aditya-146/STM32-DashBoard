@@ -50,6 +50,7 @@ TIM_HandleTypeDef htim6;
 
 UART_HandleTypeDef huart2;
 
+
 /* Definitions for SpeedBtns */
 osThreadId_t SpeedBtnsHandle;
 const osThreadAttr_t SpeedBtns_attributes = {
@@ -365,6 +366,7 @@ static void MX_USART2_UART_Init(void)
 
 }
 
+
 /**
   * @brief GPIO Initialization Function
   * @param None
@@ -477,6 +479,8 @@ void CANTask(void *argument)
 	if (HAL_CAN_AddTxMessage(&hcan, &TxHeader, TxData, &TxMailbox) != HAL_OK){
 		Error_Handler();
 	}
+
+	osDelay(10);
 
 	if(dht11_data.temperature > 0){// Send Message 2: Temp & Humidity
 		TxHeader.IDE = CAN_ID_STD;
